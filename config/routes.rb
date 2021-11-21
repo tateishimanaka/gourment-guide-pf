@@ -1,3 +1,22 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  devise_for :shop, controllers: {
+    sessions: 'restaurant/sessions',
+    passwards: 'restaurant/passwards',
+    registrations: 'restaurant/registrations'
+  }
+
+  devise_for :customer, controllers: {
+    sessions: 'public/sessions',
+    passwards: 'public/passwards',
+    registrations: 'public/registrations'
+  }
+
+  devise_for :admin, controllers: {
+    sessions: 'admin/sessions',
+    passwards: 'admin/passwards',
+    registrations: 'admin/registrations'
+  }
+
+
 end
