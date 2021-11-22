@@ -1,23 +1,94 @@
-<h2>Sign up</h2>
+<div class="container">
+<h2>新規会員登録</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "restaurants/shared/error_messages", resource: resource %>
+<%= form_with model:@shop, url: shop_registration_path, local: true do |f| %>
+  <%= render "restaurant/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <form>
+    <div class="form-group">
+      <label for="shop_name">店名</label>
+      <%= f.text_field :shop_name, autofocus: true, placeholder: "(例)gourmentguide食堂", class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <label for="shop_name_kana">店名フリガナ</label>
+      <%= f.text_field :shop_name_kana, autofocus: true, placeholder: "(例)グルメガイド食堂", class: "form-control" %>
+    </div>
+  </form>
+  <div class="form-growp">
+    <label for="email">メールアドレス</label>
+    <%= f.email_field :email, autofocus: true, placeholder: "(例)gourment@email.com", class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
+  <div class="form-growp">
+    <label for="telephone_number">電話番号(ハイフンなし)</label>
+    <%= f.text_field :telephone_number, autofocus: true, placeholder: "(例)0312345678", class: "form-control" %>
+  </div>
+  <div class="form-growp">
+    <label for="postal_code">郵便番号(ハイフンなし)</label>
+    <%= f.text_field :postal_code, autofocus: true, placeholder: "(例)1234567", class: "form-control" %>
+  </div>
+  <div class="form-growp">
+    <label for="address">住所</label>
+    <%= f.text_field :address, autofocus: true, placeholder: "(例)東京都渋谷区道玄坂1－2", class: "form-control" %>
+  </div>
+  <div class="form-growp">
+    <label for="accsee">最寄り駅</label>
+    <%= f.text_area :access, autofocus: true, placeholder: "(例)JR山手線渋谷駅から徒歩９分", class: "form-control" %>
+  </div>
+  <div class="form-growp">
+    <label for="opening_hours">営業時間</label>
+    <%= f.text_area :access, autofocus: true, placeholder: "(例)土日・祝日10：00～22：00", class: "form-control" %>
+  </div>
+  <div class="form-growp">
+    <label for="holiday">定休日</label>
+    <%= f.text_area :holiday, autofocus: true, placeholder: "(例)水曜日・第3木曜日", class: "form-control" %>
+  </div>
+  <div class="form-growp">
+    <label for="genre">ジャンル</label>
+    <%= f.text_field :genre, autofocus: true, placeholder: "(例)日本食", class: "form-control" %>
+  </div>
+  <div class="form-growp">
+    <label for="reserve">予約</label>
+
+  </div>
+  <div class="form-growp">
+    <label for="payment_method">支払方法</label>
+    <%= f.text_area :payment_method, autofocus: true, placeholder: "(例)クレジットカード・電子マネー取り扱い可", class: "form-control" %>
+  </div>
+  <div class="form-growp">
+    <label for="parking_space">駐車場</label>
+
+  </div>
+  <div class="form-growp">
+    <label for="smoking">禁煙喫煙</label>
+    <%= f.text_area :smoking, autofocus: true, placeholder: "(例)店内完全喫煙、外に喫煙所があります", class: "form-control" %>
+  </div>
+  <div class="form-growp">
+    <label for="private_room">個室有無</label>
+  </div>
+  <div class="form-growp">
+    <label for="ticket">整理券有無</label>
+
+  </div>
+  <div class="form-growp">
+    <label for="children">子連れ可否</label>
+    <%= f.text_area :children, autofocus: true, placeholder: "(例)未就学児不可", class: "form-control" %>
+  </div>
+  <div class="form-growp">
+    <label for="wait_time">通常待ち時間</label>
+    <%= f.text_area :wait_time, autofocus: true, placeholder: "(例)予約をしていなくても30分ほどでご案内できます", class: "form-control" %>
+  </div>
+  <div class="form-growp">
+    <label for="passward">パスワード</label>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
+  <div class="form-growp">
+    <label for="passward_confirmation">パスワード確認用</label>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
@@ -26,4 +97,5 @@
   </div>
 <% end %>
 
-<%= render "restaurants/shared/links" %>
+<%= render "restaurant/shared/links" %>
+</div>
