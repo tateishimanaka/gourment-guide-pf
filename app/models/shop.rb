@@ -6,4 +6,6 @@ class Shop < ApplicationRecord
 
   enum reserve: { reserve_only: 0, reserve_possible: 1, reserve_impossible: 2 }
 
+  attachment :image
+
 end
