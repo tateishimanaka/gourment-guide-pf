@@ -1,0 +1,7 @@
+ja:
+  enums:
+    shop:
+      reserve:
+        reserve_only: '完全予約制'
+        reserve_possible: '予約可'
+        reserve_impossible: '予約不可'

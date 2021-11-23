@@ -50,7 +50,12 @@
   </div>
   <div class="form-growp">
     <label for="reserve">予約</label>
-
+    <%= f.radio_button :reserve, "reserve_only" %>
+    <%= f.label :reserve, "完全予約制" %>
+    <%= f.radio_button :reserve, "reserve_possible" %>
+    <%= f.label :reserve, "予約可" %>
+    <%= f.radio_button :reserve, "reserve_impossible" %>
+    <%= f.label :reserve, "予約不可" %>
   </div>
   <div class="form-growp">
     <label for="payment_method">支払方法</label>
@@ -58,7 +63,7 @@
   </div>
   <div class="form-growp">
     <label for="parking_space">駐車場</label>
-
+    <%= f.select :parking_space, *[0..50] %>台有
   </div>
   <div class="form-growp">
     <label for="smoking">禁煙喫煙</label>
@@ -66,6 +71,7 @@
   </div>
   <div class="form-growp">
     <label for="private_room">個室有無</label>
+    
   </div>
   <div class="form-growp">
     <label for="ticket">整理券有無</label>
