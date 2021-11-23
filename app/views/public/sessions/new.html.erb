@@ -1,6 +1,8 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <h2>一般会員ログイン画面</h2>
+      <%= form_with model: @customer, url: new_customer_session_path, local:true do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -24,3 +26,7 @@
 <% end %>
 
 <%= render "public/shared/links" %>
+
+    </div>
+  </div>
+</div>
