@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <h2>退会しますか？</h2>
+      <%= link_to "退会しない", customers_path %>
+      <%= link_to "退会する", customer_withdraw_path, method: :patch, "data-confirm" => "本当に退会しますか？" %>
+    </div>
+  </div>
+</div>

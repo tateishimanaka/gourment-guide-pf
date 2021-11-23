@@ -21,7 +21,9 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: "homes#top"
     get "/about" => "homes#about"
-    resource :customers, only: [:show]
+    resource :customers, only: [:show, :edit, :update]
+    get "/customer/unsubscribe" => "customers#unsubscribe"
+    patch "/customer/withdraw" => "customers#withdraw"
   end
 
   namespace :restaurant do

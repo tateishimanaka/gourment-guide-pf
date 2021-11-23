@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <h2>変更する</h2>
+      <%= form_with model: @customer, url: customers_path, local:true do |f| %>
+        <form>
+          <div class="form-growp">
+            <label for="last_name">姓</label>
+            <%= f.text_field :last_name, autofocus: true, placeholder: "(例)佐藤", class: "form-control" %>
+          </div>
+          <div class="form-growp">
+            <label for="first_name">名</label>
+            <%= f.text_field :first_name, autofocus: true, placeholder: "(例)太郎", class: "form-control" %>
+          </div>
+          <div class="form-growp">
+            <label for="last_name_kana">セイ</label>
+            <%= f.text_field :last_name_kana, autofocus: true, placeholder: "(例)サトウ", class: "form-control" %>
+          </div>
+          <div class="form-growp">
+            <label for="first_name_kana">メイ</label>
+            <%= f.text_field :first_name_kana, autofocus: true, placeholder: "(例)タロウ", class: "form-control" %>
+          </div>
+          <div class="form-growp">
+            <label for="postal_code">郵便番号(ハイフンなし)</label>
+            <%= f.text_field :postal_code, autofocus: true, placeholder: "(例)1234567", class: "form-control" %>
+          </div>
+          <div class="form-growp">
+            <label for="address">住所</label>
+            <%= f.text_field :address, autofocus: true, placeholder: "(例)東京都渋谷区道玄坂1－1", class: "form-control" %>
+          </div>
+          <div class="form-growp">
+            <label for="telephone_number">電話番号(ハイフンなし)</label>
+            <%= f.text_field :address, autofocus: true, placeholder: "(例)09012345678", class: "form-control" %>
+          </div>
+          <div class="form-growp">
+            <label for="email">メールアドレス</label>
+            <%= f.email_field :email, autofocus: true, placeholder: "(例)gourment@email.com", class: "form-control" %>
+          </div>
+          <div class="form-growp">
+            <%= f.submit "変更内容を保存する" %>
+          </div>
+        </form>
+      <% end %>
+      <%= link_to "退会する", customer_unsubscribe_path %>
+    </div>
+  </div>
+</div>
