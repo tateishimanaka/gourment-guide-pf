@@ -1,7 +1,7 @@
 <div class="container">
   <h3><%= @shop.shop_name %></h3>
   <div class="row">
-
+    <%= link_to "編集する", edit_restaurant_shops_path %>
     <%= attachment_image_tag @shop, :image, :fill, 200, 200, format: 'jpeg' %>
     <%= @shop.introduction %>
   </div>
