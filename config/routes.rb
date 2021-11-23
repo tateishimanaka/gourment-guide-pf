@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   namespace :restaurant do
     get "/about" => "homes#about", as: "about"
+    resource :shops, only: [:show]
   end
 
 

@@ -1,6 +1,8 @@
-<h2>Log in</h2>
+<div class="container">
+<h2>ログイン</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+<%= form_with model:@shop, url: shop_session_path, local:true do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -24,3 +26,4 @@
 <% end %>
 
 <%= render "restaurant/shared/links" %>
+</div>

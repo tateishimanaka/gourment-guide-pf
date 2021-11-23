@@ -1,0 +1,89 @@
+<div class="container">
+  <h3><%= @shop.shop_name %></h3>
+  <div class="row">
+
+    <%= attachment_image_tag @shop, :image, :fill, 200, 200, format: 'jpeg' %>
+    <%= @shop.introduction %>
+  </div>
+  <div class="row">
+    <table class="table table-borderless">
+      <tbody>
+        <tr>
+          <th scope="row">フリガナ</th>
+          <td><%= @shop.shop_name_kana %></td>
+        </tr>
+        <tr>
+          <th scope="row">電話番号</th>
+          <td><%= @shop.telephone_number %></td>
+        </tr>
+        <tr>
+          <th scope="row">営業時間</th>
+          <td><%= @shop.opening_hours %></td>
+        </tr>
+        <tr>
+          <th scope="row">定休日</th>
+          <td><%= @shop.holiday %></td>
+        </tr>
+        <tr>
+          <th scope="row">住所</th>
+          <td>
+            〒<%= @shop.postal_code %><br>
+            <%= @shop.address %>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">アクセス</th>
+          <td><%= @shop.access %></td>
+        </tr>
+        <tr>
+          <th scope="row">ジャンル</th>
+          <td><%= @shop.genre %></td>
+        </tr>
+        <tr>
+          <th scope="row">予約可否</th>
+          <td><%= @shop.reserve_i18n %></td>
+        </tr>
+        <tr>
+          <th scope="row">駐車スペース</th>
+          <td><%= @shop.parking_space %>台</td>
+        </tr>
+        <tr>
+          <th scope="row">支払方法</th>
+          <td><%= @shop.payment_method %></td>
+        </tr>
+        <tr>
+          <th scope="row">喫煙禁煙</th>
+          <td><%= @shop.smoking %></td>
+        </tr>
+        <tr>
+          <th scope="row">個室有無</th>
+          <td>
+            <% if @shop.private_room == true %>
+              有
+            <% else %>
+              無
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">整理券配布有無</th>
+          <td>
+            <% if @shop.private_room == true %>
+              有
+            <% else %>
+              無
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">子連れ可否</th>
+          <td><%= @shop.children %></td>
+        </tr>
+        <tr>
+          <th scope="row">通常混雑状況</th>
+          <td><%= @shop.wait_time %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
