@@ -18,6 +18,10 @@ class Restaurant::ShopsController < ApplicationController
   end
 
   def withdraw
+    @shop = current_shop
+    @shop.update(is_deleted: true)
+    reset_session
+    redirect_to root_path
   end
 
   private

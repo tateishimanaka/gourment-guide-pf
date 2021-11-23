@@ -25,8 +25,8 @@ Rails.application.routes.draw do
   namespace :restaurant do
     get "/about" => "homes#about", as: "about"
     resource :shops, only: [:show, :edit, :update]
-    get "/shop/unsubscribe" => "shop#unsubscribe", as: "shop_unsubscribe"
-    patch "/shop/withdraw" => "shop#withdraw", as: "shop_withdraw"
+    get "shop/unsubscribe" => "shops#unsubscribe"
+    patch "/shop/withdraw" => "shops#withdraw"
   end
 
 
