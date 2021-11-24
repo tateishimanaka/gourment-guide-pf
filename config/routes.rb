@@ -24,7 +24,9 @@ Rails.application.routes.draw do
     resource :customers, only: [:show, :edit, :update]
     get "/customer/unsubscribe" => "customers#unsubscribe"
     patch "/customer/withdraw" => "customers#withdraw"
-    resources :shops, only: [:show, :index]
+    resources :shops, only: [:show, :index] do
+      resource :favorites, only: [:create, :destroy, :index]
+    end
   end
 
   namespace :restaurant do

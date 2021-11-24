@@ -4,6 +4,12 @@ class Shop < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :favorites, dependent: :destroy
+
+  def favorited_by?(customer)
+    favorites.where(customer_id: customer.id).exists?
+  end
+
   enum reserve: { reserve_only: 0, reserve_possible: 1, reserve_impossible: 2 }
 
   attachment :image
