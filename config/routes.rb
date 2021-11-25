@@ -21,11 +21,15 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: "homes#top"
     get "/about" => "homes#about"
-    resource :customers, only: [:show, :edit, :update]
+    resource :customers, only: [:show, :edit, :update] do
+      member do
+        get :favorites
+      end
+    end
     get "/customer/unsubscribe" => "customers#unsubscribe"
     patch "/customer/withdraw" => "customers#withdraw"
     resources :shops, only: [:show, :index] do
-      resource :favorites, only: [:create, :destroy, :index]
+      resource :favorites, only: [:create, :destroy]
     end
   end
 

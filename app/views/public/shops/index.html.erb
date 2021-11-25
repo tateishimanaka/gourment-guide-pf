@@ -5,6 +5,17 @@
       <% @shops.each do |shop| %>
         <%= shop.shop_name %>
         <%= shop.shop_name_kana %>
+          <% if customer_signed_in? %>
+            <% if shop.favorited_by?(current_customer) %>
+              <%= link_to shop_favorites_path(shop), method: :delete do %>
+                ♡<%= shop.favorites.count %>
+              <% end %>
+            <% else %>
+              <%= link_to shop_favorites_path(shop), method: :post do %>
+                ♡<%= shop.favorites.count %>
+              <% end %>
+            <% end %>
+          <% end %>
       <% end %>
     </div>
   </div>

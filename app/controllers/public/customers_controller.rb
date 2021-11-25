@@ -24,6 +24,11 @@ class Public::CustomersController < ApplicationController
     redirect_to about_path
   end
 
+  def favorite
+    @customer = current_customer
+    @favorites = current_customer.favorites
+  end
+
   private
 
   def customer_params
