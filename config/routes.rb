@@ -22,8 +22,8 @@ Rails.application.routes.draw do
     root to: "homes#top"
     get "/about" => "homes#about"
     resource :customers, only: [:show, :edit, :update] do
-      member do
-        get :favorites
+      collection do
+        get :favorite
       end
     end
     get "/customer/unsubscribe" => "customers#unsubscribe"

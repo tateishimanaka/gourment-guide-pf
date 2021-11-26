@@ -2,9 +2,10 @@
   <div class="row">
     <div class="col-md-10">
       <h3>お気に入り</h3>
-      <% @favorites.each do |favorite| %>
-        
-      <% end %>
+        <% current_customer.favorite_shops.each do |shop| %>
+          <%= shop.shop_name %>
+          <%= shop.address %>
+        <% end %>
     </div>
   </div>
 </div>

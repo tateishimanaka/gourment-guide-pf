@@ -5,6 +5,7 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :favorites, dependent: :destroy
+  has_many :favorite_shops, through: :favorites, source: :shop
 
   def active_for_authentication?
     super && (is_deleted == false)

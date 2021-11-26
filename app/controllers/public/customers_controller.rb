@@ -25,8 +25,6 @@ class Public::CustomersController < ApplicationController
   end
 
   def favorite
-    @customer = current_customer
-    @favorites = current_customer.favorites
   end
 
   private
