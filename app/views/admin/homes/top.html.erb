@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row mt-5 pt-5">
+
+      <div class="col-md-3 offset-md-1">
+        <%= link_to "Customer List", admin_customers_path, class: "btn btn-outline-secondary" %>
+      </div>
+      <div class="col-md-3 offset-md-1">
+        <%= link_to "Shop List", admin_shops_path, class: "btn btn-outline-secondary" %>
+      </div>
+      <div class="col-md-3 offset-md-1">
+        <%= link_to "Logout", destroy_admin_session_path, method: :delete, class: "btn btn-outline-secondary" %>
+      </div>
+
+  </div>
+</div>

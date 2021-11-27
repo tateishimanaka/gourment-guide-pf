@@ -41,5 +41,10 @@ Rails.application.routes.draw do
     patch "/shop/withdraw" => "shops#withdraw"
   end
 
+  namespace :admin do
+    root to: "homes#top"
+    resources :customers, only: [:index]
+    resources :shops, only: [:index]
+  end
 
 end
