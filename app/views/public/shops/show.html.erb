@@ -29,9 +29,22 @@
       <% if customer_signed_in? %>
         <%= form_with(model:[@shop, @comment], local: true) do |f| %>
           <%= f.text_area :comment, rows:'5', placeholder: "コメントをする" %>
+          <%= f.label :rate %>
+          <%= f.hidden_field :rate, id: :review_star %>
           <%= f.submit "送信" %>
+
+          <script>
+            $('#star').raty({
+              size: 36,
+              starOff: "<%= asset_path('star-off.png') %>",
+              starOn: "<%= asset_path('star-on.png') %>",
+              scoreName: "comment[rate]"
+            });
+          </script>
         <% end %>
       <% end %>
+
+
     </div>
   </div>
   <div class="row">
