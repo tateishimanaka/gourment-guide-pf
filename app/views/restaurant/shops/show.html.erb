@@ -1,6 +1,12 @@
 <div class="container">
   <h3><%= @shop.shop_name %></h3>
   <div class="row">
+    ♡<%= @shop.favorites.count %>
+    <P>コメント件数：<%= @shop.comments.count %></P>
+      <% @shop.comments.each do |comment| %>
+        <%= comment.customer.last_name %><%= comment.customer.first_name %>
+        <%= comment.comment %><%= comment.created_at.strftime('%Y%m%d') %>
+      <% end %>
     <%= link_to "編集する", edit_restaurant_shops_path %>
     <%= attachment_image_tag @shop, :image, :fill, 200, 200, format: 'jpeg' %>
     <%= @shop.introduction %>

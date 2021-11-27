@@ -2,6 +2,7 @@ class Restaurant::ShopsController < ApplicationController
 
   def show
     @shop = current_shop
+    @comment = Comment.new
   end
 
   def edit

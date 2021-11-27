@@ -3,7 +3,7 @@
     <div class="col-md-10">
       <h2>店舗一覧</h2>
       <% @shops.each do |shop| %>
-        <%= shop.shop_name %>
+        <%= link_to shop.shop_name, shop_path(shop.id) %>
         <%= shop.shop_name_kana %>
           <% if customer_signed_in? %>
             <% if shop.favorited_by?(current_customer) %>
@@ -16,6 +16,7 @@
               <% end %>
             <% end %>
           <% end %>
+          ♡<%= shop.favorites.count %>
       <% end %>
     </div>
   </div>

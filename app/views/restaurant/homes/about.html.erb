@@ -1,8 +1,14 @@
 <div class="container">
+  <h3>gourment guide</h3>
+  <p>誰でも簡単にホームページが作れる</p>
   <div class="row">
-    <%= link_to "ログイン", new_shop_session_path %>
-  </div>
-  <div class="row">
-    <%= link_to "新規会員登録", new_shop_registration_path %>
+    <div class="col-md-4">
+      <p>お店の情報を登録済みの方</p>
+      <%= link_to "ログイン", new_shop_session_path %>
+    </div>
+    <div class="col-md-4 offset-md-2">
+      <p>お店の情報を公開したい方</p>
+      <%= link_to "新規会員登録", new_shop_registration_path %>
+    </div>
   </div>
 </div>
