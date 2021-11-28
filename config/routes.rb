@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'searches/search'
   devise_for :shop, controllers: {
     sessions: 'restaurant/sessions',
     passwards: 'restaurant/passwards',
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
     resources :shops, only: [:show, :index] do
       resource :comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
+      get :search, on: :collection
     end
   end
 
@@ -46,5 +48,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:index]
     resources :shops, only: [:index]
   end
+
+  get "search" => "searches#search"
 
 end

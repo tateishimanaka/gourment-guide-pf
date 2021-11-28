@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>shop name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @shops.each do |shop| %>
+      <tr>
+        <td>
+          <%= link_to shop.shop_name, shop_path(shop.id) %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>

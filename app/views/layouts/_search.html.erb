@@ -1,0 +1,5 @@
+
+  <%= form_with url: search_path, method: :get, local:true do |f| %>
+    <%= f.text_field :shop_name %>
+    <%= f.submit :search %>
+  <% end %>
