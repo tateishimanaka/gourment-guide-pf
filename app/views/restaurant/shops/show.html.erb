@@ -8,7 +8,7 @@
         <%= comment.comment %><%= comment.created_at.strftime('%Y%m%d') %>
       <% end %>
     <%= link_to "編集する", edit_restaurant_shops_path %>
-    <%= attachment_image_tag @shop, :image, :fill, 200, 200, format: 'jpeg' %>
+    <%= attachment_image_tag @shop, :image, :fill, 200, 200, format: 'jpg' %>
     <%= @shop.introduction %>
   </div>
   <div class="row">

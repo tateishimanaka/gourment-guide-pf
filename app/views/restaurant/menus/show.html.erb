@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <h3>menu</h3>
+  </div>
+  <div class="row">
+     <%= attachment_image_tag @menu, :image, format: 'jpg', size: "200x200" %>
+     <%= @menu.name %>
+     ￥<%= @menu.price %>
+  </div>
+</div>
