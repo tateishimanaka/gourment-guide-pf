@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2021_11_27_161529) do
   create_table "menus", force: :cascade do |t|
     t.integer "shop_id"
     t.string "name"
-    t.integer "image_id"
+    t.string "image_id"
     t.integer "price"
     t.boolean "is_active", default: true
     t.datetime "created_at", null: false

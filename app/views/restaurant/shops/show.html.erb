@@ -1,5 +1,9 @@
 <div class="container">
-  <h3><%= @shop.shop_name %></h3>
+  <div class="row">
+    <h3><%= @shop.shop_name %></h3>
+    <%= link_to "メニュー一覧", restaurant_menus_path %>
+    <%= link_to "メニュー新規登録", new_restaurant_menu_path %>
+  </div>
   <div class="row">
     ♡<%= @shop.favorites.count %>
     <P>コメント件数：<%= @shop.comments.count %></P>
@@ -8,7 +12,7 @@
         <%= comment.comment %><%= comment.created_at.strftime('%Y%m%d') %>
       <% end %>
     <%= link_to "編集する", edit_restaurant_shops_path %>
-    <%= attachment_image_tag @shop, :image, :fill, 200, 200, format: 'jpg' %>
+    <%= attachment_image_tag @shop, :image, :fill, 200, 200, format: 'jpeg' %>
     <%= @shop.introduction %>
   </div>
   <div class="row">

@@ -44,7 +44,7 @@ Rails.application.routes.draw do
     resource :shops, only: [:show, :edit, :update]
     get "shop/unsubscribe" => "shops#unsubscribe"
     patch "/shop/withdraw" => "shops#withdraw"
-    resources :menus, only: [:create, :new, :index, :show, :edit, :uodate]
+    resources :menus, only: [:create, :new, :index, :show, :edit, :update]
   end
 
   namespace :admin do
