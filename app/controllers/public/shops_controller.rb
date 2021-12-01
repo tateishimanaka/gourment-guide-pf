@@ -10,4 +10,9 @@ class Public::ShopsController < ApplicationController
     @comment = Comment.new
   end
 
+  def menu
+    @shop = Shop.find(params[:id])
+    @menus = @shop.menus
+  end
+
 end

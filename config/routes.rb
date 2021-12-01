@@ -36,7 +36,8 @@ Rails.application.routes.draw do
       resource :comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
     end
-    resources :menus, only: [:show, :index]
+    resources :menus, only: [:show]
+    get "shops/:id/menu" => "shops#menu", as: "menu_index"
   end
 
   namespace :restaurant do
@@ -45,6 +46,7 @@ Rails.application.routes.draw do
     get "shop/unsubscribe" => "shops#unsubscribe"
     patch "/shop/withdraw" => "shops#withdraw"
     resources :menus, only: [:create, :new, :index, :show, :edit, :update]
+    resources :seats, only: [:create, :new, :index, :edit, :update]
   end
 
   namespace :admin do

@@ -1,9 +1,8 @@
 class Public::MenusController < ApplicationController
 
-def index
-end
 
-def show
-end
+  def show
+    @menu = Menu.find(params[:id])
+  end
 
 end

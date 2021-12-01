@@ -26,6 +26,7 @@ class Public::CustomersController < ApplicationController
 
   def favorite
   end
+  
 
   private
 

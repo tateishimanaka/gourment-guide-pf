@@ -1,0 +1,2 @@
+module Restaurant::SeatsHelper
+end
