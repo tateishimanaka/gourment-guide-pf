@@ -1,0 +1,19 @@
+<div class="container">
+  <div class-"row">
+    <h3>席タイプ</h3>
+  </div>
+  <div class="row">
+    <% @seats.each do |seat| %>
+      <%= seat.seat_type %>
+      <%= attachment_image_tag seat, :image, :fill, 200, 200, format: "jpeg" %>
+      <%= seat.introduction %>
+      <%= seat.people %>
+      <% if seat.smoking == true %>
+        喫煙可
+      <% else %>
+      　禁煙
+      <% end %>
+      <%= seat.reserve %>
+    <% end %>
+  </div>
+</div>

@@ -15,4 +15,9 @@ class Public::ShopsController < ApplicationController
     @menus = @shop.menus
   end
 
+  def seat
+    @shop = Shop.find(params[:id])
+    @seats = @shop.seats
+  end
+
 end
