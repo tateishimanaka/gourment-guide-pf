@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <h3>席タイプ編集</h3>
+  </div>
+  <div class="row">
+    <div class="mx-auto">
+      <%= form_with model: @seat, url: restaurant_seat_path(@seat), local:true do |f| %>
+        <form>
+          <div class="form-growp">
+            <label for="seat_type">席タイプ</label>
+            <%= f.text_field :seat_type, autofocus: true, class: "form-control" %>
+          </div>
+          <div class="form-growp">
+            <label for="image">画像</label>
+            <%= f.attachment_field :image %>
+          </div>
+          <div class="form-growp">
+            <label for="introduction">説明</label>
+            <%= f.text_area :introduction, autofocus: true, class: "form-control" %>
+          </div>
+          <div class="form-growp">
+            <label for="people">人数</label>
+            <%= f.text_field :people, autofocus: true, class: "form-control" %>
+          </div>
+          <div class="form-growp">
+            <label for="smoking">禁煙・喫煙</label>
+            <%= f.radio_button :smoking, :true %>
+            <%= f.label :smoking, "喫煙可", value: true %>
+            <%= f.radio_button :smoking, :false %>
+            <%= f.label :smoking, "禁煙", value: false %>
+          </div>
+          <div class="form-growp">
+            <label for="reserve">予約</label>
+            <%= f.text_field :reserve, autofocus: true, class: "form-control" %>
+          </div>
+          <div class="form-growp">
+            <label for="is_active">使用状況</label>
+            <%= f.radio_button :is_active, :true %>
+            <%= f.label :is_active, "使用中", value: true %>
+            <%= f.radio_button :is_active, :false %>
+            <%= f.label :is_active, "使用中止", value: false %>
+          </div>
+          <div class="form-growp">
+            <%= f.submit "変更を保存" %>
+          </div>
+        </form>
+      <% end %>
+    </div>
+  </div>
+</div>
