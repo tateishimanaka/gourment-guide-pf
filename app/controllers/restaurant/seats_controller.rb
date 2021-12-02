@@ -12,7 +12,7 @@ class Restaurant::SeatsController < ApplicationController
   end
 
   def index
-    @seats = current_shop.seates
+    @seats = current_shop.seats
   end
 
   def edit

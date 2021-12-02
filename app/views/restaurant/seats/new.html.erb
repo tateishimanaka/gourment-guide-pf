@@ -4,8 +4,9 @@
   </div>
   <div class="row">
     <div class="mx-auto">
+      <%= form_with model:@seat, url: restaurant_seats_path, local:true do |f| %>
       <form>
-        <%= form_with model:@seat, url: restaurant_seats_path, local:true do |f| %>
+
           <div class="form-growp">
             <label for="seat_type">席のタイプ</label>
             <%= f.text_field :seat_type, autofacus: true, placeholder: "(例)カウンター", class: "form-control" %>
@@ -43,8 +44,9 @@
           <div class="form-growp">
             <%= f.submit "登録する" %>
           </div>
-        <% end %>
+
       </form>
+      <% end %>
     </div>
   </div>
 </div>
