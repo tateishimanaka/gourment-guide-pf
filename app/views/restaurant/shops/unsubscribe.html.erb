@@ -1,9 +1,27 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-10">
-      <h3>退会処理画面</h3>
-      <%= link_to "退会しない", restaurant_shops_path %><br>
-      <%= link_to "退会する", restaurant_shop_withdraw_path, method: :patch, "data-confirm" => "本当に退会しますか?" %>
+    <h4 class="mt-5 ml-4">退会処理画面</h4>
+  </div>
+  <div class="row mt-5">
+    <div class="mx-auto">
+      <h4>
+        退会すると、保存、コメントができなくなります。
+      </h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="mx-auto">
+      <p>(また、今まで保存したものがもれなくなります)</p>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="mx-auto">
+      <%= link_to "退会しない", restaurant_shops_path, class: "btn btn-outline-secondary" %><br>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="mx-auto">
+      <%= link_to "退会する", restaurant_shop_withdraw_path, method: :patch, "data-confirm" => "本当に退会しますか?", class: "btn btn-outline-danger" %>
     </div>
   </div>
 </div>
