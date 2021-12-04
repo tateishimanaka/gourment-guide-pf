@@ -1,25 +1,32 @@
 <div class="container">
   <div class="row">
-    <h3>menu登録</h3>
+    <h4 class="ml-5 mt-4">メニュー新規登録</h4>
   </div>
   <div class="row">
       <div class="mx-auto">
         <%= form_with model:@menu, url:restaurant_menus_path, local:true do |f| %>
           <form>
-            <div class="form-group">
+            <div class="form-group mt-3">
               <label for="name">メニュー名</label>
-              <%= f.text_field :name, autofocus: true, class: "form-control" %>
+              <%= f.text_field :name, autofocus: true, placeholder: "(例)魚定食", class: "form-control" %>
             </div>
-            <div class="form-growp">
+            <div class="form-growp mt-5">
               <label for="image">イメージ画像</label>
-              <%= f.attachment_field :image %>
+              <div class="image">
+                <%= f.attachment_field :image %>
+              </div>
             </div>
-            <div class="form-growp">
+            <div class="form-growp mt-5">
               <label for="price">値段</label>
-              <%= f.text_field :price, autofocus: true, class: "form-control" %>円
+              <div class="price">
+                <%= f.text_field :price, autofocus: true, placeholder: "(例)700", class: "form-control" %>
+              </div>
             </div>
-            <div class="form-growp">
-              <%= f.submit "登録" %>
+            <div class="form-growp mt-5">
+              <%= f.submit "登録する", class: "btn btn-outline-secondary" %>
+            </div>
+            <div class="form-growp mt-4">
+              <%= link_to "他のメニューを見る", restaurant_menus_path %>
             </div>
           </form>
         <% end %>

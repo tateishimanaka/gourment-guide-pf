@@ -1,29 +1,70 @@
 <div class="container">
-<h2>ログイン</h2>
-
-
-<%= form_with model:@shop, url: shop_session_path, local:true do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="row">
+    <h4 class="ml-5 mt-4">ログイン</h4>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <p class="ml-4">会員登録がお済でない方は<%= link_to "こちら", new_shop_registration_path %></p>
+  <div class="row">
+    <div class="mx-auto">
+      <%= form_with model:@shop, url: shop_session_path, local:true do |f| %>
+        <table>
+          <tbody>
+            <tr>
+              <div class="form-growp mt-5 pt-5">
+                <td>
+                  <label for="email">メールアドレス</label>
+                </td>
+                <td><div class="ml-5"></div></td>
+                <td>
+                  <div class="mt-1">
+                    <%= f.email_field :email, autofocus: true, class: "form-control" %>
+                  </div>
+                </td>
+              </div>
+            </tr>
+            <tr>
+              <div class="form-growp">
+                <td>
+                  <label for="password mt-3">パスワード</label>
+                </td>
+                <td><div class="ml-5"></div></td>
+                <td>
+                  <div class="mt-4">
+                    <%= f.password_field :password, autofocus: true, class: "form-control" %>
+                  </div>
+                </td>
+              </div>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>
+                <div class="actions mt-3">
+                  <%= f.submit "ログイン", class: "btn btn-outline-secondary" %>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>
+              <% if devise_mapping.rememberable? %>
+                <div class="field">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+              <% end %>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>
+                <%= link_to "戻る", restaurant_about_path %></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "restaurant/shared/links" %>
 </div>
