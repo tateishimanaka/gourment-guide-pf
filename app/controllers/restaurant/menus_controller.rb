@@ -12,7 +12,7 @@ class Restaurant::MenusController < ApplicationController
   end
 
   def index
-    @menus = current_shop.menus
+    @menus = current_shop.menus.page(params[:page]).per(1)
   end
 
   def show

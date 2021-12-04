@@ -125,6 +125,17 @@
         </div>
         <div class="card-body">
           <strong class="card-text"><%= comment.comment %></strong>
+          <div id="rate_<%= comment.id %>"></div>
+          <script>
+            $('#rate_<%= comment.id %>').empty();
+            $('#rate_<%= comment.id %>').raty({
+              readOnly: true,
+              score: "<%= comment.rate %>",
+              size: 36,
+              starOff: "<%= asset_path('star-off.png') %>",
+              starOn: "<%= asset_path('star-on.png') %>",
+            });
+          </script>
         </div>
       </div>
       <% end %>

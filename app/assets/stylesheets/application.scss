@@ -17,6 +17,15 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
 
+ @import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Raleway&display=swap');
+
+ body {
+   // font-family: Chalkduster, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+   // font-family: 'Raleway', 'Hachi Maru Pop', cursive;
+ }
+
+ @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
  header {
-   font-family: Chalkduster, "Bradley Hand", Courier, "Segoe Print", sans-serif;
+  font-family: 'Raleway', sans-serif;
  }
