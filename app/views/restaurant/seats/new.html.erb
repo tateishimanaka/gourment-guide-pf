@@ -1,50 +1,55 @@
 <div class="container">
   <div class="row">
-    <h3>席</h3>
+    <h4 class="mt-5 ml-4">席タイプ新規登録</h4>
   </div>
-  <div class="row">
+  <div class="row mt-5">
     <div class="mx-auto">
       <%= form_with model:@seat, url: restaurant_seats_path, local:true do |f| %>
-      <form>
-
-          <div class="form-growp">
+        <form>
+          <div class="form-growp mt-3">
             <label for="seat_type">席のタイプ</label>
             <%= f.text_field :seat_type, autofacus: true, placeholder: "(例)カウンター", class: "form-control" %>
           </div>
-          <div class="form-growp">
+          <div class="form-growp mt-5">
             <label for="image">画像</label>
-            <%= f.attachment_field :image %>
+            <div class="image">
+              <%= f.attachment_field :image %>
+            </div>
           </div>
-          <div class="form-growp">
+          <div class="form-growp mt-5">
             <label for="introduction">説明</label>
             <%= f.text_area :introduction, autofacus: true, placeholder: "何か必要事項や注意事項があればご記入ください", class: "form-control" %>
           </div>
-          <duv class="form-growp">
+          <div class="form-growp mt-5">
             <label for="people">人数</label>
-            <%= f.text_field :people, autofacus: true, placeholder: "(例)５～１０", class: "form-control" %>名
-          </duv>
-          <div class="form-growp">
-            <label for="smoking">禁煙喫煙</label>
-            <%= f.radio_button :smoking, :true %>
-            <%= f.label :smoking, "喫煙可", value: true %>
-            <%= f.radio_button :smoking, :false %>
-            <%= f.label :smoking, "禁煙", value: false %>
+            <%= f.text_field :people, autofacus: true, placeholder: "(例)５～１０", class: "form-control" %>
           </div>
-          <div class="form-growp">
+          <div class="form-growp mt-5">
+            <label for="smoking">禁煙喫煙</label>
+            <div class="smoking">
+              <%= f.radio_button :smoking, :true %>
+              <%= f.label :smoking, "喫煙可", value: true %>
+              <%= f.radio_button :smoking, :false %>
+              <%= f.label :smoking, "禁煙", value: false %>
+            </div>
+          </div>
+          <div class="form-growp mt-5">
             <label for="reserve">予約</label>
             <%= f.text_field :reserve, autofacus: true, placeholder: "(例)電話にて予約承ります", class: "form-control" %>
           </div>
-          <div class="form-growp">
+          <div class="form-growp mt-5">
             <label for="is_active">使用状況</label>
-            <%= f.radio_button :is_active, :true %>
-            <%= f.label :is_active, "使用中", value: true %>
-            <%= f.radio_button :is_active, :false %>
-            <%= f.label :is_active, "使用停止", value: false %>
+            <div class="active">
+              <%= f.radio_button :is_active, :true %>
+              <%= f.label :is_active, "使用中", value: true %>
+              <%= f.radio_button :is_active, :false %>
+              <%= f.label :is_active, "使用停止", value: false %>
+            </div>
           </div>
-          <div class="form-growp">
-            <%= f.submit "登録する" %>
+          <div class="form-growp mt-5">
+            <%= f.submit "登録する", class: "btn btn-outline-secondary" %>
           </div>
-
+          
       </form>
       <% end %>
     </div>

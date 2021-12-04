@@ -1,32 +1,36 @@
 <div class="container">
   <div class="row">
-    <h3>menu edit</h3>
+    <h4 class="mt-5 ml-4">メニュー編集</h4>
   </div>
   <div class="row">
     <div class="mx-auto">
       <%= form_with model:@menu, url: restaurant_menu_path(@menu.id), local:true do |f| %>
         <form>
-          <div class="form-growp">
+          <div class="form-growp mt-3">
             <label for="name">メニュー名</label>
             <%= f.text_field :name, autofocus: true, class: "form-control" %>
           </div>
-          <div class="form-growp">
+          <div class="form-growp mt-5">
             <label for="image">イメージ画像</label>
             <%= f.attachment_field :image %>
           </div>
-          <div class="form-growp">
+          <div class="form-growp mt-5">
             <label for="price">値段</label>
             <%= f.text_field :price, autofocus: true, class: "form-control" %>
           </div>
-          <div class="form-growp">
+          <div class="form-growp mt-5">
             <label for="status">販売ステータス</label>
             <%= f.radio_button :is_active, :true %>
             <%= f.label :is_active, "販売中", value: true %>
             <%= f.radio_button :is_active, :false %>
             <%= f.label :is_active, "販売停止中", value: false %>
           </div>
-          <div class="form-growp">
-            <%= f.submit "変更する" %>
+          <div class="form-growp mt-5">
+            <%= f.submit "変更する", class: "btn btn-outline-secondary" %>
+          </div>
+          <div class="form-growp mt-4">
+            <%= link_to "他のメニューを見る", restaurant_menus_path %><br>
+            <%= link_to "マイページに戻る", restaurant_shops_path %>
           </div>
         </form>
       <% end %>

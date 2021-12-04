@@ -1,12 +1,17 @@
 <div class="container">
   <div class="row">
-    <h3>menu</h3>
+    <h4><%= @menu.name %></h4>
+  </div>
+  <div class="row">
     <%= link_to "メニュー一覧", restaurant_menus_path %>
     <%= link_to "メニュー編集", edit_restaurant_menu_path(@menu.id) %>
   </div>
-  <div class="row">
-     <%= attachment_image_tag @menu, :image, format: 'jpeg', size: "200x200" %>
-     <%= @menu.name %>
+  <div class="row mt-5">
+    <div class="col-md-5 offset-md-1">
+      <%= attachment_image_tag @menu, :image, format: 'jpeg', size: "400x400", class: "rounded" %>
+    </div>
+
+
      ￥<%= @menu.price %>
      <% if @menu.is_active == true %>
         販売中
