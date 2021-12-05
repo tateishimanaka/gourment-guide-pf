@@ -1,7 +1,9 @@
-<div class="container">
-  <h2>新規会員登録</h2>
+<div class="container mb-5 pb-5">
+  <div class="row mt-4 ml-4">
+    <h4>新規会員登録</h4>
+  </div>
   <div class="row">
-    <div class="col-md-10">
+    <div class="mx-auto">
 
 
 
@@ -10,19 +12,19 @@
 
     <form>
       <div class="form-growp">
-        <label for="last_name">姓</label>
+        <label for="last_name">苗字</label>
         <%= f.text_field :last_name, autofocus: true, placeholder: "(例)佐藤", class: "form-control" %>
       </div>
       <div class="form-growp">
-        <label for="first_name">名</label>
+        <label for="first_name">名前</label>
         <%= f.text_field :first_name, autofocus: true, placeholder: "(例)太郎", class: "form-control" %>
       </div>
       <div class="form-growp">
-        <label for="last_name_kana">セイ</label>
+        <label for="last_name_kana">ミョウジ</label>
         <%= f.text_field :last_name_kana, autofocus: true, placeholder: "(例)サトウ", class: "form-control" %>
       </div>
        <div class="form-growp">
-        <label for="first_name_kana">メイ</label>
+        <label for="first_name_kana">ナマエ</label>
         <%= f.text_field :first_name_kana, autofocus: true, placeholder: "(例)タロウ", class: "form-control" %>
       </div>
       <div class="form-growp">

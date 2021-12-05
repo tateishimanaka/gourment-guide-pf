@@ -1,13 +1,13 @@
-<div class="container">
+<div class="container mt-4 mb-5">
   <div class="row">
-    <h3><%= @shop.shop_name %></h3>
+    <h4><%= @shop.shop_name %></h4>
   </div>
   <div class="row">
     <%= @shop.shop_name_kana %>
   </div>
   <div class="row">
     <div class="col-md-4">
-      <h5 class="text-danger">♡<%= @shop.favorites.count %></h5>
+      <h5><i class="fas fa-heart"></i><%= @shop.favorites.count %></h5>
     </div>
     <div class="col-md-2">
 
