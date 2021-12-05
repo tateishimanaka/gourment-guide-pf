@@ -1,19 +1,55 @@
 <div class="container">
-  <div class-"row">
-    <h3>席タイプ</h3>
-  </div>
   <div class="row">
+    <h4 class="mt-5 ml-4">席タイプ</h4>
+  </div>
+  <div class="row mt-5">
     <% @seats.each do |seat| %>
-      <%= seat.seat_type %>
-      <%= attachment_image_tag seat, :image, :fill, 200, 200, format: "jpeg" %>
-      <%= seat.introduction %>
-      <%= seat.people %>
-      <% if seat.smoking == true %>
-        喫煙可
-      <% else %>
-      　禁煙
-      <% end %>
-      <%= seat.reserve %>
+      <div class="col-md-5 mt-3">
+        <%= attachment_image_tag seat, :image, :fill, 500, 500, format: 'jpeg', class: "rounded" %>
+      </div>
+      <div class="col-md-5 offset-md-1 mt-5">
+        <table class="table table-striped">
+          <tbody>
+            <tr>
+              <th scope="row">席タイプ</th>
+              <td><%= seat.seat_type %></td>
+            </tr>
+            <tr>
+              <th scope="row">説明</th>
+              <td>
+                <%= seat.introduction %>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">人数</th>
+              <td>
+                <%= seat.people %>人
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">禁煙・喫煙</th>
+              <td>
+                <% if seat.smoking == true %>
+                  喫煙可
+                <% else %>
+                  禁煙
+                <% end %>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">予約</th>
+              <td>
+                <%= seat.reserve %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     <% end %>
+  </div>
+  <div class="row mt-5 pb-5 mb-5">
+    <div class="mx-auto">
+      <%= link_to "戻る", shop_path(@shop.id) %>
+    </div>
   </div>
 </div>

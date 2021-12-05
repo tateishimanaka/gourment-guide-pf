@@ -4,12 +4,31 @@
       MENU
     </h4>
   </div>
+  <div class=" row mt-1 ml-4">
+    <%= link_to "戻る", shop_path(@shop.id) %>
+  </div>
+  <div class="row mt-4">
+    <% @menus.each do |menu| %>
+      <div class="d-flex justfiy-content-start ml-5">
+        <div class="col-auto">
+          <div class="image">
+            <%= attachment_image_tag menu, :image, :fill, 300, 300, format: "jpeg", class: "rounded" %>
+          </div>
+          <div class="name ml-4">
+            <%= menu.name %>
+          </div>
+          <div class="price ml-4">
+            ￥<%= menu.add_tax_price.to_s(:delimited) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
   <div class="row">
-    
+    <div class="mx-auto">
+      <%= paginate @menus %>
+    </div>
   </div>
 </div>
-<% @menus.each do |menu| %>
-  <%= link_to menu_path do %>
-    <%= menu.name %>
-  <% end %>
-<% end %>
+
+

@@ -13,12 +13,13 @@ class Public::ShopsController < ApplicationController
 
   def menu
     @shop = Shop.find(params[:id])
-    @menus = @shop.menus
+    @menus_all = @shop.menus.where(is_active: true).order("id DESC")
+    @menus = @menus_all.page(params[:page]).per(20)
   end
 
   def seat
     @shop = Shop.find(params[:id])
-    @seats = @shop.seats
+    @seats = @shop.seats.where(is_active: true).order("id DESC")
   end
 
 end

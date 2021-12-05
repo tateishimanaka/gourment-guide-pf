@@ -1,5 +1,14 @@
 <div class="container">
   <div class="row">
-    <%= @menu.name %>
+    <h4 class="ml-4 mt-4">
+      <%= @menu.name %>
+    </h4>
+  </div>
+  <div class="ml-4">
+  </div>
+  <div class="row mt-4 mb-5 pb-5">
+    <div class="mx-auto">
+      <%= attachment_image_tag @menu, :image, :fill, 500, 500, format: "jpeg", class: "rounded" %>
+    </div>
   </div>
 </div>
