@@ -1,47 +1,184 @@
 <div class="container">
   <div class="row">
-    <%= link_to "メニュー一覧", menu_index_path %>
-    <%= link_to "席タイプ", seat_index_path %>
-    <div class="col-md-10">
-      <h3><%= @shop.shop_name %></h3>
-      <p><%= @shop.shop_name_kana %></p>
-      <p id="favorite_buttons_<%= @shop.id %>">
-        <%= render 'public/favorites/favorite', shop: @shop %>
-      </p>
-      <P>コメント件数：<%= @shop.comments.count %></P>
-      <% @shop.comments.each do |comment| %>
-        <%= comment.customer.last_name %><%= comment.customer.first_name %>
-        <%= comment.comment %><%= comment.created_at.strftime('%Y%m%d') %>
-
-        <% if comment.customer == current_customer %>
-          <%= link_to "削除", shop_comments_path(comment.shop, comment), method: :delete %>
-        <% end %>
-      <% end %>
-      <% if customer_signed_in? %>
-        <%= form_with(model:[@shop, @comment], local: true) do |f| %>
-          <%= f.text_area :comment, rows:'5', placeholder: "コメントをする" %>
-          <div id="rate">
-            <%= f.label :rate %>
-            <%= f.hidden_field :rate, id: :review_star %>
-          </div>
-
-          <%= f.submit "送信" %>
-
-          <script>
-            $('#rate').raty({
-              size: 36,
-              starOff: "<%= asset_path('star-off.png') %>",
-              starOn: "<%= asset_path('star-on.png') %>",
-              scoreName: "comment[rate]"
-            });
-          </script>
-        <% end %>
-      <% end %>
-
-
-    </div>
+    <h4 class="mt-4 ml-4"><%= @shop.shop_name %></h4>
   </div>
   <div class="row">
-    <%= link_to "お店一覧に戻る", shops_path %>
+    <p class="ml-4"><%= @shop.shop_name_kana %></p>
+  </div>
+  <div class="row">
+    <div class="col-md-5 offset-md-1">
+      <div class="image">
+        <%= attachment_image_tag @shop, :image, :fill, 400, 300, format: 'jpeg', class: "rounded" %>
+      </div>
+      <div class="row ml-2 mt-2">
+        <span class="badge badge-secondary">
+          <h6>コメント</h6>
+        </span>
+      </div>
+      <div class="row">
+        <h6 class="ml-4 mt-1">コメント：<%= @shop.comments.count %>件</h6>
+      </div>
+      <div class="row">
+        <div class="col-md-10">
+          <% @shop.comments.each do |comment| %>
+            <div class="card mt-3">
+              <div class="card-header">
+                <h5><%= comment.customer.last_name %><%= comment.customer.first_name %></h5>
+                <p class="card-text"><%= comment.created_at.strftime('%Y.%m.%d %H:%M') %></p>
+                <% if comment.customer == current_customer %>
+                  <%= link_to "削除", shop_comments_path(comment.shop, comment), method: :delete %>
+                <% end %>
+              </div>
+              <div class="card-body">
+                <strong class="card-text"><%= comment.comment %></strong>
+                <div id="rate_<%= comment.id %>"></div>
+                <script>
+                  $('#rate_<%= comment.id %>').empty();
+                  $('#rate_<%= comment.id %>').raty({
+                    readOnly: true,
+                    score: "<%= comment.rate %>",
+                    size: 36,
+                    starOff: "<%= asset_path('star-off.png') %>",
+                    starOn: "<%= asset_path('star-on.png') %>",
+                  });
+                </script>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h5 class="mt-1 ml-1">
+        <%= @shop.introduction %>
+      </h5>
+      <div class="row mt-3">
+        <h5 class="col-md-2">
+          <%= link_to "メニュー", menu_index_path, class: "badge badge-warning" %>
+        </h5>
+        <h5 class="col-md-2">
+          <%= link_to "席タイプ", seat_index_path, class: "badge badge-warning" %>
+        </h5>
+        <h5 id="favorite_buttons_<%= @shop.id %>">
+          <%= render 'public/favorites/favorite', shop: @shop %>
+        </h5>
+      </div>
+      <h5>基本情報</h5>
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <th scope="row">電話番号</th>
+            <td>
+              <%= @shop.telephone_number %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">住所</th>
+            <td>
+              〒<%= @shop.postal_code %><br>
+              <%= @shop.address %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">アクセス</th>
+            <td>
+              <%= @shop.access %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">営業時間</th>
+            <td>
+              <%= @shop.opening_hours %></td>
+          </tr>
+          <tr>
+            <th scope="row">定休日</th>
+            <td>
+              <%= @shop.holiday %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">ジャンル</th>
+            <td>
+              <%= @shop.genre %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">予約</th>
+            <td>
+              <%= @shop.reserve_i18n %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">支払方法</th>
+            <td>
+              <%= @shop.payment_method %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">禁煙・喫煙</th>
+            <td>
+              <%= @shop.smoking %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">個室</th>
+            <td>
+              <% if @shop.private_room == true %>
+                有
+              <% else %>
+              　無
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">整理券配布有無</th>
+            <td>
+              <% if @shop.ticket == true %>
+                有
+              <% else %>
+              　無
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">子連れ</th>
+            <td>
+              <%= @shop.children %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">通常混雑状況</th>
+            <td>
+              <%= @shop.wait_time %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row mt-1 ml-1">
+        <div class="col-md-12">
+        <% if customer_signed_in? %>
+          <%= form_with(model:[@shop, @comment], local: true) do |f| %>
+            <%= f.text_area :comment, rows:'5', placeholder: "コメントをする", class: "form-control" %>
+            <div id="rate">
+              <lavel for="rate">評価</lavel>
+              <%= f.hidden_field :rate, id: :review_star %>
+            </div>
+            <div class="mt-2">
+              <%= f.submit "送信", class: "btn btn-outline-secondary" %>
+            </div>
+            <script>
+              $('#rate').raty({
+                size: 36,
+                starOff: "<%= asset_path('star-off.png') %>",
+                starOn: "<%= asset_path('star-on.png') %>",
+                scoreName: "comment[rate]"
+              });
+            </script>
+          <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

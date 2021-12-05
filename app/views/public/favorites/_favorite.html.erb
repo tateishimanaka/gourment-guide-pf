@@ -1,12 +1,14 @@
 <% if customer_signed_in? %>
   <% if shop.favorited_by?(current_customer) %>
     <%= link_to shop_favorites_path(shop), method: :delete, remote: true do %>
-      ♡<%= shop.favorites.count %>
+      <i class="fas fa-heart"></i><%= shop.favorites.count %>
     <% end %>
   <% else %>
     <%= link_to shop_favorites_path(shop), method: :post, remote: true do %>
-      ♡<%= shop.favorites.count %>
+      <i class="far fa-heart"></i><%= shop.favorites.count %>
     <% end %>
   <% end %>
+<% else %>
+  <i class="fas fa-heart"></i><%= shop.favorites.count %>
 <% end %>
-♡<%= shop.favorites.count %>
+

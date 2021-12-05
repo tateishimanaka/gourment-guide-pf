@@ -1,5 +1,7 @@
 class Restaurant::SeatsController < ApplicationController
 
+  before_action :authenticate_shop!
+
   def new
     @seat = Seat.new
   end

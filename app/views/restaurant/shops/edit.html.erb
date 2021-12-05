@@ -11,52 +11,52 @@
           <%= f.text_field :shop_name, autofocus: true, class: "form-control" %>
         </div>
 
-      <div class="form-group mt-5">
+      <div class="form-group mt-4">
         <label for="shop_name_kana">店名フリガナ</label>
         <%= f.text_field :shop_name_kana, autofocus: true, class: "form-control" %>
       </div>
 
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="image">イメージ画像</label>
         <div class="image">
           <%= f.attachment_field :image %>
         </div>
       </div>
 
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="email">メールアドレス</label>
         <%= f.email_field :email, autofocus: true, class: "form-control" %>
       </div>
 
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="telephone_number">電話番号(ハイフンなし)</label>
         <%= f.text_field :telephone_number, autofocus: true, class: "form-control" %>
       </div>
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="postal_code">郵便番号(ハイフンなし)</label>
         <%= f.text_field :postal_code, autofocus: true, class: "form-control" %>
       </div>
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="address">住所</label>
         <%= f.text_field :address, autofocus: true, class: "form-control" %>
       </div>
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="accsee">最寄り駅</label>
         <%= f.text_area :access, autofocus: true, class: "form-control" %>
       </div>
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="opening_hours">営業時間</label>
         <%= f.text_area :opening_hours, autofocus: true, class: "form-control" %>
       </div>
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="holiday">定休日</label>
         <%= f.text_area :holiday, autofocus: true, class: "form-control" %>
       </div>
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="genre">ジャンル</label>
         <%= f.text_field :genre, autofocus: true, class: "form-control" %>
       </div>
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="reserve">予約</label>
         <div class="reserve">
           <%= f.radio_button :reserve, "reserve_only" %>
@@ -67,21 +67,21 @@
           <%= f.label :reserve, "予約不可" %>
         </div>
       </div>
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="payment_method">支払方法</label>
         <%= f.text_area :payment_method, autofocus: true, class: "form-control" %>
       </div>
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="parking_space">駐車場</label>
         <%= f.select :parking_space, *[0..50] %>台有
       </div>
 
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="smoking">禁煙喫煙</label>
         <%= f.text_area :smoking, autofocus: true, class: "form-control" %>
       </div>
 
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="private_room">個室有無</label>
         <div class="private_room">
           <%= f.radio_button :private_room, :true %>
@@ -90,7 +90,7 @@
           <%= f.label :private_room, "個室無", value: false %>
         </div>
       </div>
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="ticket">整理券有無</label>
         <div class="ticket">
           <%= f.radio_button :ticket, :true %>
@@ -99,19 +99,19 @@
           <%= f.label :ticket, "配布無", value: false %>
         </div>
       </div>
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="children">子連れ可否</label>
         <%= f.text_area :children, autofocus: true, class: "form-control" %>
       </div>
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="wait_time">通常待ち時間</label>
         <%= f.text_area :wait_time, autofocus: true, class: "form-control" %>
       </div>
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <label for="introduction">紹介文</label>
         <%= f.text_area :introduction, autfocus: true, class: "form-control" %>
       </div>
-      <div class="form-growp mt-5">
+      <div class="form-growp mt-4">
         <%= f.submit "内容を変更する", class: "btn btn-outline-secondary" %>
         <div class="mt-4">
           <%= link_to "退会する", restaurant_shop_unsubscribe_path, class: "btn btn-outline-secondary" %>
