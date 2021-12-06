@@ -1,6 +1,7 @@
 <div class="container pb-5 mb-5">
   <div class="row">
     <h4 class="mt-5 ml-4">お店の情報を編集</h4>
+    <p></p>
   </div>
   <div class="row">
     <div class="mx-auto">
@@ -112,6 +113,7 @@
         <%= f.text_area :introduction, autfocus: true, class: "form-control" %>
       </div>
       <div class="form-growp mt-4">
+        <%= link_to "戻る", restaurant_shops_path %><br>
         <%= f.submit "内容を変更する", class: "btn btn-outline-secondary" %>
         <div class="mt-4">
           <%= link_to "退会する", restaurant_shop_unsubscribe_path, class: "btn btn-outline-secondary" %>

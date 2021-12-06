@@ -25,8 +25,10 @@ class Public::CustomersController < ApplicationController
   end
 
   def favorite
+    @favorites_all = current_customer.favorite_shops.order("id DESC")
+    @favorites = @favorites_all.page(params[:page]).per(20)
   end
-  
+
 
   private
 

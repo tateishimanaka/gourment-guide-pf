@@ -1,9 +1,27 @@
-<div class="container">
+<div class="container mb-5 pb-5">
+  <div class="row mt-5 pt-5">
+    <div class="mx-auto">
+      <h2>本当に退会しますか？</h2>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="mx-auto">
+      <h4>退会すると、お気に入りやコメントができなくなります。</h4>
+    </div>
+  </div>
   <div class="row">
-    <div class="col-md-10">
-      <h2>退会しますか？</h2>
-      <%= link_to "退会しない", customers_path %>
-      <%= link_to "退会する", customer_withdraw_path, method: :patch, "data-confirm" => "本当に退会しますか？" %>
+    <div class="mx-auto">
+      <h4>(今までお気に入りで保存したお店も見ることができなくなります)</h4>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class=" mx-auto">
+      <%= link_to "退会しない", customers_path, class: "btn btn-outline-secondary" %>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="mx-auto">
+      <%= link_to "退会する", customer_withdraw_path, method: :patch, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger" %>
     </div>
   </div>
 </div>

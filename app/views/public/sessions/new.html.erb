@@ -4,7 +4,7 @@
       一般会員ログイン画面
     </h4>
   </div>
-  <p class="ml-4">会員登録がお済でない方は<%= link_to "こちら", new_customer_registration_path %></p>
+  <p class="ml-4">会員登録がまだの方は<%= link_to "こちら", new_customer_registration_path %></p>
   <div class="row mt-4">
     <div class="mx-auto">
       <%= form_with model: @customer, url: customer_session_path, local:true do |f| %>
