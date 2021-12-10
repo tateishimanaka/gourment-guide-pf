@@ -17,26 +17,23 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
 
- @import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Raleway&display=swap');
-
- body {
-   font-family: Chalkduster, "Bradley Hand", Courier, "Segoe Print", sans-serif;
-   font-family: 'Raleway', 'Hachi Maru Pop', cursive;
-   color: #66330e;
- }
 
 
-
- @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Playfair+Display:ital,wght@0,900;1,700&display=swap');
 
  header {
-  // font-family: 'Raleway', sans-serif;
-  background-color: #f5deb3;
+  font-family: 'Playfair Display', serif 'Bebas Neue', cursive, 'Anton', sans-serif ;
+  background-color: #cd853f;
   height: 100px;
+ }
 
+ main {
+  // font-family: 'Zen Maru Gothic', sans-serif;
+  // color: #cd853f;
  }
 
 footer {
- background-color: #f5deb3;
+ background-color: #cd853f;
  height: 100px;
+ font-family: 'Zen Maru Gothic', sans-serif;
 }

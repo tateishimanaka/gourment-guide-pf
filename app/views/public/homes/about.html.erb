@@ -1,14 +1,20 @@
 <div class="container mt-5 mb-5 pb-5">
   <h3>gourment guide</h3>
   <p>行きたいお店の欲しい情報が見つかる</p>
-  <div class="row">
-    <div class="col-md-4">
+  <p>会員登録をすると、お気に入り登録や口コミを残すことができます</p>
+  <div class="row mt-5">
+    <div class="col-md-4 offset-md-2">
       <p>会員登録済みの方</p>
-      <%= link_to "ログイン", new_customer_session_path %>
+      <div class="ml-4">
+        <%= link_to "ログイン", new_customer_session_path, class: "btn btn-outline-secondary" %>
+      </div>
     </div>
-    <div class="col-md-4 offset-md-3">
+
+    <div class="col-md-4 offset-md-2">
       <p>登録がお済ではない方</p>
-      <%= link_to "新規登録", new_customer_registration_path %>
+      <div class="ml-5">
+        <%= link_to "新規登録", new_customer_registration_path, class: "btn btn-outline-secondary" %>
+      </div>
     </div>
   </div>
 </div>

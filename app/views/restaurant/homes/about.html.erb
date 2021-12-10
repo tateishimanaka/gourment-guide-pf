@@ -1,14 +1,34 @@
 <div class="container mt-5 mb-5 pb-5">
   <h3>gourment guide</h3>
   <p>誰でも簡単にホームページが作れる</p>
+  <div class="row mt-3">
+    <div class="mx-auto">
+      <h5>グルメガイドは、会員登録・必要事項に入力するだけで</h5>
+    </div>
+  </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="mx-auto">
+      <h5>お店の情報を公開することができます</h5>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="mx-auto">
+      <h5>誰かが作った情報ではなく,正確な情報を公開しましょう!</h5>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-4 offset-md-2">
       <p>お店の情報を登録済みの方</p>
-      <%= link_to "ログイン", new_shop_session_path %>
+      <div class="ml-5">
+        <%= link_to "ログイン", new_shop_session_path, class: "btn btn-outline-secondary" %>
+      </div>
     </div>
     <div class="col-md-4 offset-md-2">
       <p>お店の情報を公開したい方</p>
-      <%= link_to "新規会員登録", new_shop_registration_path %>
+      <div class="ml-5">
+        <%= link_to "新規会員登録", new_shop_registration_path, class: "btn btn-outline-secondary" %>
+      </div>
     </div>
   </div>
 </div>
