@@ -1,6 +1,9 @@
-<div class="container">
+<div class="container mb-5 pb-5">
   <div class="row">
     <h4 class="mt-5 ml-4">席タイプ</h4>
+  </div>
+  <div class="row mt-2 ml-4">
+    <%= link_to "戻る", shop_path(@shop.id) %>
   </div>
   <div class="row mt-5">
     <% @seats.each do |seat| %>
@@ -46,10 +49,5 @@
         </table>
       </div>
     <% end %>
-  </div>
-  <div class="row mt-5 pb-5 mb-5">
-    <div class="mx-auto">
-      <%= link_to "戻る", shop_path(@shop.id) %>
-    </div>
   </div>
 </div>

@@ -11,11 +11,5 @@ class Public::ShopsController < ApplicationController
     @comment = Comment.new
   end
 
-  
-
-  def seat
-    @shop = Shop.find(params[:id])
-    @seats = @shop.seats.where(is_active: true).order("id DESC")
-  end
 
 end
