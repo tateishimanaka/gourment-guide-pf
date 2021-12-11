@@ -30,7 +30,8 @@
           </div>
           <div class="form-growp mt-4">
             <%= link_to "他のメニューを見る", restaurant_menus_path %><br>
-            <%= link_to "マイページに戻る", restaurant_shops_path %>
+            <%= link_to "マイページに戻る", restaurant_shops_path %><br>
+            <%= link_to "戻る", restaurant_menu_path(@menu.id) %>
           </div>
         </form>
       <% end %>

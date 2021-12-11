@@ -1,5 +1,7 @@
 class Restaurant::MenusController < ApplicationController
 
+  before_action :authenticate_shop!
+
   def new
     @menu = Menu.new
   end

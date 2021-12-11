@@ -1,31 +1,42 @@
-<div class="page-header">
-  <h1>お問い合わせ</h1>
+<div class="container mt-4 pb-5 mb-5">
+<div class="row">
+  <h4>お問い合わせ</h4>
 </div>
 
 <%= form_for @inquiry, :url => inquiry_thanks_path do |f| %>
-  <table class="table">
-    <tr>
-      <th>名前</th>
-      <td>
-        <%= f.hidden_field :name %>
-        <%= @inquiry.name %>
-      </td>
-    </tr>
-    <tr>
-      <th>メールアドレス</th>
-      <td>
-        <%= f.hidden_field :email %>
-        <%= @inquiry.email %>
-      </td>
-    </tr>
-    <tr>
-      <th>お問い合わせ内容</th>
-      <td>
-        <%= f.hidden_field :message %>
-        <%= simple_format(@inquiry.message) %>
-      </td>
-    </tr>
-  </table>
-  <%= f.submit '送信', :class => 'btn btn-primary' %>
+  <div class="row">
+    <div class="col-md-9 offset-md-2">
+      <table class="table">
+      <tr>
+        <th>名前</th>
+        <td>
+          <%= f.hidden_field :name %>
+          <%= @inquiry.name %>
+        </td>
+      </tr>
+      <tr>
+        <th>メールアドレス</th>
+        <td>
+          <%= f.hidden_field :email %>
+          <%= @inquiry.email %>
+        </td>
+      </tr>
+      <tr>
+        <th>お問い合わせ内容</th>
+        <td>
+          <%= f.hidden_field :message %>
+          <%= simple_format(@inquiry.message) %>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <td>
+            <%= f.submit '送信', :class => 'btn btn-outline-secondary' %>
+          </td>
+        </th>
+      </tr>
+    </table>
+    </div>
+  </div>
 <% end %>
-
+</div>

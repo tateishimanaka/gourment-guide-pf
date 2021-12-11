@@ -1,5 +1,13 @@
 
   <%= form_with url: search_path, method: :get, local:true do |f| %>
-    <%= f.text_field :shop_name %>
-    <%= f.submit :search %>
+    <div class="name">
+      <%= f.text_field :shop_name, placeholder: "店名で検索" %>
+    </div>
+    <div class="genre">
+      <%= f.text_field :genre, placeholder: "ジャンルで検索" %>
+    </div>
+    <div class="address">
+      <%= f.text_field :address, placeholder: "住所で検索" %><%= f.submit :search %>
+    </div>
+
   <% end %>

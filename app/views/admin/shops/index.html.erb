@@ -1,6 +1,7 @@
-<div class="container">
-  <h3>Shop List</h3>
-  <div class="row">
+<div class="container mt-5 mb-5 pb-5">
+  <h4 class="ml-4">Shop List</h4>
+  <div class="row mt-4">
+    <div class="col-md-10 offset-md-1">
     <table class="table">
       <thead>
         <tr>
@@ -33,6 +34,12 @@
         <% end %>
       </tbody>
     </table>
+    </div>
   </div>
-  <%= link_to "HOME", admin_root_path %>
+  <div class="row">
+    <div class="mx-auto">
+      <%= paginate @shops %>
+      <%= link_to "HOME", admin_root_path %>
+    </div>
+  </div>
 </div>

@@ -1,22 +1,43 @@
-<div class="container">
+<div class="container mt-5 mb-5 pb-5">
   <div class="row">
     <h4><%= @menu.name %></h4>
   </div>
   <div class="row">
     <%= link_to "メニュー一覧", restaurant_menus_path %>
-    <%= link_to "メニュー編集", edit_restaurant_menu_path(@menu.id) %>
+
   </div>
   <div class="row mt-5">
     <div class="col-md-5 offset-md-1">
       <%= attachment_image_tag @menu, :image, format: 'jpeg', size: "400x400", class: "rounded" %>
     </div>
 
+    <div class="col-md-5 offset-md-1">
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <th scope="row">値段</th>
+            <td>
+              ￥<%= @menu.price %>(税抜き価格)
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">販売状況</th>
+            <td>
+              <% if @menu.is_active == true %>
+                販売中
+              <% else %>
+              　販売中止中
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td><%= link_to "編集する", edit_restaurant_menu_path(@menu.id), class: "btn btn-outline-secondary" %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-     ￥<%= @menu.price %>
-     <% if @menu.is_active == true %>
-        販売中
-      <% else %>
-      　販売中止中
-      <% end %>
+
   </div>
 </div>

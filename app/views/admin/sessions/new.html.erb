@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container mt-5 mb-5 pb-5">
   <div class="row">
-    <h3>Gourment-guide Admin Login</h3>
+    <h4 class="ml-4">Gourment-guide Admin</h4>
   </diV>
   <div class="row">
     <div class="mx-auto">
@@ -11,7 +11,7 @@
             <label for="email">メールアドレス</label>
             <%= f.email_field :email, autofocus: true, class: "form-control" %>
           </div>
-          <div class="form-growp">
+          <div class="form-growp mt-4">
             <%= f.label :password %>
             <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>

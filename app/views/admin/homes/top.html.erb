@@ -1,15 +1,22 @@
-<div class="container">
-  <div class="row mt-5 pt-5">
-
-      <div class="col-md-3 offset-md-1">
-        <%= link_to "Customer List", admin_customers_path, class: "btn btn-outline-secondary" %>
-      </div>
-      <div class="col-md-3 offset-md-1">
-        <%= link_to "Shop List", admin_shops_path, class: "btn btn-outline-secondary" %>
-      </div>
-      <div class="col-md-3 offset-md-1">
-        <%= link_to "Logout", destroy_admin_session_path, method: :delete, class: "btn btn-outline-secondary" %>
-      </div>
-
+<div class="container mb-5 pb-5">
+  <div class="row mt-5">
+    <div class="mx-auto">
+      <h4 class="ml-5">gourment guide amdmin</h4>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="mx-auto">
+      <%= link_to "Customer List", admin_customers_path, class: "btn btn-outline-secondary" %>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="mx-auto">
+      <%= link_to "Shop List", admin_shops_path, class: "btn btn-outline-secondary" %>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="mx-auto">
+      <%= link_to "Logout", destroy_admin_session_path, method: :delete, class: "btn btn-outline-secondary" %>
+    </div>
   </div>
 </div>

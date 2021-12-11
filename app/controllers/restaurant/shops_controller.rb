@@ -1,5 +1,7 @@
 class Restaurant::ShopsController < ApplicationController
 
+   before_action :authenticate_shop!
+
   def show
     @shop = current_shop
     @comment = Comment.new

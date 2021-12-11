@@ -20,20 +20,34 @@
 
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <% if customer_signed_in? %>
-              <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "nav-link text-light" %>
-              <%= link_to "My Page", customers_path, class: "nav-link text-light" %>
-              <div class="mr-5 pr-5"><%= link_to "shop List", shops_path, class: "nav-link text-light" %></div>
+              <div class="mt-4">
+                <%= link_to "Logout", destroy_customer_session_path, method: :delete, class: "nav-link text-light" %>
+              </div>
+              <div class="mt-4">
+                <%= link_to "My Page", customers_path, class: "nav-link text-light" %>
+              </div>
+              <div class=" mt-4 mr-5 pr-5"><%= link_to "shop List", shops_path, class: "nav-link text-light" %></div>
               <div class="ml-5 pl-5"><%= render 'layouts/search', shops: @shops %></div>
             <% elsif shop_signed_in? %>
-              <%= link_to "ログアウト", destroy_shop_session_path, method: :delete, class: "nav-link text-light" %>
-              <%= link_to "shop List", shops_path, class: "nav-link text-light" %>
-              <div class="mr-5 pr-5"><%= link_to "My Page", restaurant_shops_path, class: "nav-link text-light" %></div>
+              <div class="mt-4">
+                <%= link_to "Logout", destroy_shop_session_path, method: :delete, class: "nav-link text-light" %>
+              </div>
+              <div class="mt-4">
+                <%= link_to "Shop List", shops_path, class: "nav-link text-light" %>
+              </div>
+              <div class=" mt-4 mr-5 pr-5"><%= link_to "My Page", restaurant_shops_path, class: "nav-link text-light" %></div>
               <div class="ml-5 pl-5"><%= render 'layouts/search', shops: @shops %></div>
             <% else %>
-              <%= link_to "お店の情報を公開", restaurant_about_path, class: "nav-link text-light" %>
-              <%= link_to "お店を探す", about_path, class: "nav-link text-light" %>
-              <div class=""><%= link_to "shop List", shops_path, class: "nav-link text-light" %></div>
-              <div class=" ml-5 pl-5"><%= render 'layouts/search', shops: @shops %></div>
+              <div class="mt-4">
+                <%= link_to "お店の情報を公開", restaurant_about_path, class: "nav-link text-light" %>
+              </div>
+              <div class="mt-4">
+                <%= link_to "お店を探す", about_path, class: "nav-link text-light" %>
+              </div>
+              <div class="mt-4 mr-5 pr-5">
+                <%= link_to "shop List", shops_path, class: "nav-link text-light" %>
+              </div>
+              <div class="ml-3 pl-3"><%= render 'layouts/search', shops: @shops %></div>
             <% end %>
           </ul>
         </div>
