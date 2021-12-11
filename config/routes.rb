@@ -47,6 +47,7 @@ Rails.application.routes.draw do
     patch "/shop/withdraw" => "shops#withdraw"
     resources :menus, only: [:create, :new, :index, :show, :edit, :update]
     resources :seats, only: [:create, :new, :index, :edit, :update]
+    resources :images, only: [:new, :create, :index, :show, :edit, :update, :destroy]
   end
 
   namespace :admin do

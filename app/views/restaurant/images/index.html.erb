@@ -1,0 +1,20 @@
+<div class="container mb-5 pb-5">
+  <div class="row">
+    <h4 class="mt-4 ml-4">
+      Photos
+    </h4>
+  </div>
+  <div class="row">
+    <% @images.each do |image| %>
+      <div class="d-flex justify-content-start ml-5 mb-3">
+        <div class="col-auto">
+          <div class="image">
+            <%= attachment_image_tag image, :image, :fill, 300, 300, format: 'jpeg', class: "rounded" %>
+          </div>
+          <p><%= image.introduction %></p>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>

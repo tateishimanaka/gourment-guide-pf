@@ -1,0 +1,29 @@
+<div class="container mb-5 pb-5">
+  <div class="row">
+    <h4 class="mt-4 ml-4">Photo　新規登録</h4>
+  </div>
+  <div class="row">
+    <div class="mx-auto">
+    <%= form_with model:@image, url:restaurant_images_path, local: true do |f| %>
+      <form>
+        <div class="form-growp mt-5">
+          <label for="image">イメージ画像</label>
+          <div class="image">
+            <%= f.attachment_field :image %>
+          </div>
+        </div>
+        <div class="form-growp mt-5">
+          <label for="introduction">コメント</label>
+          <div class="introduction">
+            <%= f.text_field :introduction, autofocus: true, placeholder: "(例)お店の外観です", class: "form-control" %>
+          </div>
+            </div>
+          <div class="form-growp mt-5">
+            <%= f.submit "登録する", class: "btn btn-outline-secondary" %>
+          </div>
+        </div>
+      </form>
+    <% end %>
+    </div>
+  </div>
+</div>

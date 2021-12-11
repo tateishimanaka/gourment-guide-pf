@@ -8,6 +8,7 @@ class Shop < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :menus, dependent: :destroy
   has_many :seats, dependent: :destroy
+  has_many :images, dependent: :destroy
 
   def favorited_by?(customer)
     favorites.where(customer_id: customer.id).exists?
