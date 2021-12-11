@@ -40,3 +40,12 @@ footer {
  font-family: 'Raleway', sans-serif;
  font-family: 'Roboto Slab', serif;
 }
+
+.main-visual {
+ background-image: image-url('restauraunt2.jpg');
+ background-size: cover;
+ height: 400px;
+ width: 100%;
+ background-color: rgba(0, 0, 0, 0.5)
+
+}

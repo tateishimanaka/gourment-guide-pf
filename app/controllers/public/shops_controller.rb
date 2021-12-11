@@ -11,11 +11,7 @@ class Public::ShopsController < ApplicationController
     @comment = Comment.new
   end
 
-  def menu
-    @shop = Shop.find(params[:id])
-    @menus_all = @shop.menus.where(is_active: true).order("id DESC")
-    @menus = @menus_all.page(params[:page]).per(20)
-  end
+  
 
   def seat
     @shop = Shop.find(params[:id])

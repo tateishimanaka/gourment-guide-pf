@@ -12,7 +12,9 @@
       <div class="d-flex justfiy-content-start ml-5">
         <div class="col-auto">
           <div class="image">
-            <%= attachment_image_tag menu, :image, :fill, 300, 300, format: "jpeg", class: "rounded" %>
+            <%= link_to shop_menu_path(menu.shop, menu) do %>
+              <%= attachment_image_tag menu, :image, :fill, 300, 300, format: "jpeg", class: "rounded" %>
+            <% end %>
           </div>
           <div class="name ml-4">
             <%= menu.name %>

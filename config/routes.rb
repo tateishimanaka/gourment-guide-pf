@@ -35,9 +35,10 @@ Rails.application.routes.draw do
     resources :shops, only: [:show, :index] do
       resource :comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
+      resources :menus, only: [:index, :show]
     end
-    resources :menus, only: [:show]
-    get "shops/:id/menu" => "shops#menu", as: "menu_index"
+    # resources :menus, only: [:show]
+    # get "shops/:id/menu" => "shops#menu", as: "menu_index"
     get "shops/:id/seat" => "shops#seat", as: "seat_index"
   end
 

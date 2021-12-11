@@ -4,7 +4,7 @@
   </div>
   <div class="row mt-5">
     <% @shops.each do |shop| %>
-      <div class="d-flex justify-content-start ml-5">
+      <div class="d-flex justify-content-start mb-4 ml-4">
         <div class="col-auto">
           <div class="card" style="width: 14rem;">
             <%= attachment_image_tag shop, :image, :fill, 150, 150, format: 'jpeg', class: "rounded" %>
