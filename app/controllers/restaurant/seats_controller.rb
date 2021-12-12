@@ -9,8 +9,11 @@ class Restaurant::SeatsController < ApplicationController
   def create
     @seat = Seat.new(seat_params)
     @seat.shop_id = current_shop.id
-    @seat.save
-    redirect_to restaurant_seats_path
+    if @seat.save
+      redirect_to restaurant_seats_path
+    else
+      render :new
+    end
   end
 
   def index

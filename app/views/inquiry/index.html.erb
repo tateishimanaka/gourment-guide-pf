@@ -4,14 +4,11 @@
   </div>
 <%= form_for @inquiry, :url => inquiry_confirm_path do |f| %>
   <% if @inquiry.errors.any? %>
-    <div class="alert alert-danger" role="alert">
-      <strong>入力内容にエラーがあります</strong>
-      <ul>
-        <% @inquiry.errors.each do |attr, msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+    <% @inquiry.errors.each do |attr, msg| %>
+      <div class="text-danger">
+        ※<%= msg %>
+      </div>
+    <% end %>
   <% end %>
 
   <div class="row">

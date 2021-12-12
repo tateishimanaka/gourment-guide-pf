@@ -9,8 +9,11 @@ class Restaurant::MenusController < ApplicationController
   def create
     @menu = Menu.new(menu_params)
     @menu.shop_id = current_shop.id
-    @menu.save
-    redirect_to restaurant_menu_path(@menu)
+    if  @menu.save
+      redirect_to restaurant_menu_path(@menu)
+    else
+      render :new
+    end
   end
 
   def index

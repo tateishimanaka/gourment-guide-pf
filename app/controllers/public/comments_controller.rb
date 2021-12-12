@@ -1,5 +1,7 @@
 class Public::CommentsController < ApplicationController
 
+  before_action :authenticate_customer!
+
   def create
     shop = Shop.find(params[:shop_id])
     comment = Comment.new(comment_params)

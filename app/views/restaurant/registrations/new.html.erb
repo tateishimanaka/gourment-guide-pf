@@ -14,11 +14,11 @@
         <%= render "restaurant/shared/error_messages", resource: resource %>
         <form>
           <div class="form-group mt-3">
-            <label for="shop_name">店名</label>
+            <label for="shop_name">店名</label><span class="text-danger">(必須)</span>
             <%= f.text_field :shop_name, autofocus: true, placeholder: "(例)gourmentguide食堂", class: "form-control" %>
           </div>
           <div class="form-group mt-4">
-            <label for="shop_name_kana">店名フリガナ</label>
+            <label for="shop_name_kana">店名フリガナ</label><span class="text-danger">(必須)</span>
             <%= f.text_field :shop_name_kana, autofocus: true, placeholder: "(例)グルメガイドショクドウ", class: "form-control" %>
           </div>
           <div class="form-growp mt-4">
@@ -26,7 +26,7 @@
             <%= f.attachment_field :image %>
           </div>
           <div class="form-growp mt-4">
-            <label for="email">メールアドレス</label>
+            <label for="email">メールアドレス</label><span class="text-danger">(必須)</span>
             <%= f.email_field :email, autofocus: true, placeholder: "(例)gourment@email.com", class: "form-control" %>
           </div>
           <div class="form-growp mt-4">
@@ -105,14 +105,14 @@
             <%= f.text_area :introduction, autfocus: true, placeholder: "(例)当店自慢の魚料理をご堪能下さい！", class: "form-control" %>
           </div>
           <div class="form-growp mt-4">
-            <label for="passward">パスワード</label>
+            <label for="passward">パスワード</label><span class="text-danger">(必須)</span>
             <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %><br />
             <%= f.password_field :password, autocomplete: "new-password", autfocus: true, class: "form-control" %>
           </div>
           <div class="form-growp mt-4">
-            <label for="passward_confirmation">パスワード確認用</label><br>
+            <label for="passward_confirmation">パスワード確認用</label><span class="text-danger">(必須)</span><br>
             <%= f.password_field :password_confirmation, autocomplete: "new-password", autfocus: true, class: "form-control" %>
           </div>
           <div class="actions mt-4">

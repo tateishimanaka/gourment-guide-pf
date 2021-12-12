@@ -3,4 +3,6 @@ class Image < ApplicationRecord
 
   attachment :image
 
+  validates :image, presence: true
+
 end

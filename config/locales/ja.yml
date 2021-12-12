@@ -29,7 +29,7 @@ ja:
     - 金
     - 土
     abbr_month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -55,7 +55,7 @@ ja:
       long: "%Y年%m月%d日(%a)"
       short: "%m/%d"
     month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -217,3 +217,30 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  activerecord:
+    attributes:
+      shop:
+        email: 'メールアドレス'
+        shop_name: '店名'
+        shop_name_kana: 'フリガナ'
+        password: 'パスワード'
+  activerecord:
+    attributes:
+      customer:
+        email: 'メールアドレス'
+        password: 'パスワード'
+        last_name: '姓'
+        first_name: '名'
+        last_name_kana: 'セイ'
+        first_name_kana: 'メイ'
+        postal_code: '郵便番号'
+        address: '住所'
+        telephone_number: '電話番号'
+      menu:
+        name: 'メニュー名'
+        price: '価格'
+      seat:
+        seat_type: '席タイプ'
+        people: '人数'
+      image:
+        image: "イメージ画像"

@@ -1,5 +1,7 @@
 class Restaurant::ImagesController < ApplicationController
 
+  before_action :authenticate_shop!
+
   def new
     @image = Image.new
   end
@@ -7,8 +9,11 @@ class Restaurant::ImagesController < ApplicationController
   def create
     @image = Image.new(image_params)
     @image.shop_id = current_shop.id
-    @image.save
-    redirect_to restaurant_images_path
+    if @image.save
+      redirect_to restaurant_images_path
+    else
+      render :new
+    end
   end
 
   def index

@@ -10,6 +10,9 @@ class Shop < ApplicationRecord
   has_many :seats, dependent: :destroy
   has_many :images, dependent: :destroy
 
+  validates :shop_name, presence: true
+  validates :shop_name_kana, presence: true
+
   def favorited_by?(customer)
     favorites.where(customer_id: customer.id).exists?
   end
