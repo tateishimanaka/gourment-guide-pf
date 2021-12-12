@@ -16,12 +16,18 @@ class Restaurant::ImagesController < ApplicationController
   end
 
   def show
+    @image = Image.find(params[:id])
   end
 
   def edit
+    @image = Image.find(params[:id])
   end
 
   def update
+    @image = Image.find(params[:id])
+    @image.shop_id = current_shop.id
+    @image.update(image_params)
+    redirect_to restaurant_image_path(@image.id)
   end
 
   def destroy

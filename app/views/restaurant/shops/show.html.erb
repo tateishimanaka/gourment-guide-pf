@@ -19,11 +19,13 @@
     </div>
   </div>
   <div class="row mt-3">
-    <div class="col-md-10 offset-md-2">
+    <div class="col-md-10 offset-md-1">
       <%= link_to "Menu List", restaurant_menus_path, class: "btn btn-outline-warning" %>
       <%= link_to "Menu新規登録", new_restaurant_menu_path, class: "btn btn-outline-warning" %>
-      <%= link_to "席タイプ一覧", restaurant_seats_path, class: "btn btn-outline-warning" %>
+      <%= link_to "席タイプ", restaurant_seats_path, class: "btn btn-outline-warning" %>
       <%= link_to "席タイプ新規登録", new_restaurant_seat_path, class: "btn btn-outline-warning" %>
+      <%= link_to "Photo", restaurant_images_path, class: "btn btn-outline-warning" %>
+      <%= link_to "Photo新規投稿", new_restaurant_image_path, class: "btn btn-outline-warning" %>
       <%= link_to "基本情報を編集する", edit_restaurant_shops_path, class: "btn btn-outline-warning" %>
     </div>
   </div>
