@@ -31,6 +31,9 @@ class Restaurant::ImagesController < ApplicationController
   end
 
   def destroy
+    @image = Image.find(params[:id])
+    @image.destroy
+    redirect_to restaurant_images_path
   end
 
   private

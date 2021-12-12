@@ -21,8 +21,8 @@
             <div class="form-growp mt-5">
               <%= f.submit "保存する", class: "btn btn-outline-secondary" %>
             </div>
-            <div class="form-growp mt-5">
-
+            <div class="form-growp mt-2">
+              <%= link_to "削除する",restaurant_image_path(@image.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-outline-secondary" %>
             </div>
             <div class="form-growp mt-5">
               <%= link_to "他の投稿を見る", restaurant_images_path %><br>
