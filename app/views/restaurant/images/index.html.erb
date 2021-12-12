@@ -3,6 +3,11 @@
     <h4 class="mt-4 ml-4">
       Photos
     </h4>
+    <h3 class="ml-4 mt-3">
+      <%= link_to new_restaurant_image_path, class: "nav-link text-dark" do %>
+        <i class="far fa-plus-square"></i>
+      <% end %>
+    </h3>
   </div>
   <div class="row ml-4">
     <%= link_to "マイページに戻る", restaurant_shops_path %>
