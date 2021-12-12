@@ -1,0 +1,16 @@
+<div class="container mb-5 pb-5">
+  <div class="row mt-4 mb-4 ml-4">
+    <%= link_to "戻る", shop_images_path %>
+  </div>
+  <div class-"row mt-5">
+    <div class="col-md-8 offset-md-4">
+      <div class="card" style="width: 25rem;">
+        <%= attachment_image_tag @image, :image, :fill, 500, 400, format: 'jpeg', class: "card-img-top" %>
+        <div class="card-body">
+          <p class="card-title"><i class="far fa-comment-dots mr-2"></i><%= @image.introduction %></p>
+          <p class="card-text"><%= @image.created_at.strftime('%Y.%m.%d') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

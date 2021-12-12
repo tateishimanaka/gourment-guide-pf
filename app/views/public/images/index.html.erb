@@ -5,13 +5,13 @@
     </h4>
   </div>
   <div class="row ml-4">
-    <%= link_to "マイページに戻る", restaurant_shops_path %>
+    <%= link_to "戻る", shop_path(@shop.id) %>
   </div>
   <div class="row mt-4">
     <% @images.each do |image| %>
       <div class="d-flex justify-content-start ml-4 mb-3">
         <div class="col-auto">
-          <%= link_to restaurant_image_path(image.id), class: "nav-link text-dark" do %>
+          <%= link_to shop_image_path(image.shop, image), class: "nav-link text-dark" do %>
           <div class="card" style="width: 12rem;">
             <%= attachment_image_tag image, :image, :fill, 200, 150, format: 'jpeg', class: "card-img-top" %>
             <div class="card-body">

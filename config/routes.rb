@@ -37,6 +37,7 @@ Rails.application.routes.draw do
       resource :favorites, only: [:create, :destroy]
       resources :menus, only: [:index, :show]
       resources :seats, only: [:index]
+      resources :images, only: [:index, :show]
     end
   end
 

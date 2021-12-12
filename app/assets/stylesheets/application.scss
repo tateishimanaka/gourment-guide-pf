@@ -17,8 +17,7 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
 
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300&family=M+PLUS+Rounded+1c:wght@300&family=Zen+Maru+Gothic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@700&family=Raleway:ital,wght@1,700&family=Roboto+Slab:wght@700&display=swap');
 
  header {
@@ -29,9 +28,12 @@
   height: 100px;
  }
 
- body {
-  font-family: 'Roboto Slab', serif;
+ .main {
+  font-family: 'Kiwi Maru', serif;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
  }
+
 
 footer {
  background-color: #cd853f;
@@ -41,11 +43,12 @@ footer {
  font-family: 'Roboto Slab', serif;
 }
 
-// .main-visual {
-//  background-image: image-url('restauraunt2.jpg');
-//  background-size: cover;
-//  height: 400px;
-//  width: 100%;
-//  background-color: rgba(0, 0, 0, 0.5)
 
-// }
+.main-visual {
+ background-image: image-url('restauraunt2.jpg');
+ background-size: cover;
+ height: 400px;
+ width: 100%;
+ background-color: rgba(0, 0, 0, 0.5)
+
+}
