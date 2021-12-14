@@ -26,8 +26,11 @@ class Restaurant::SeatsController < ApplicationController
 
   def update
     @seat = Seat.find(params[:id])
-    @seat.update(seat_params)
-    redirect_to restaurant_seats_path
+    if @seat.update(seat_params)
+      redirect_to restaurant_seats_path
+    else
+      render :edit
+    end
   end
 
   def seat_params

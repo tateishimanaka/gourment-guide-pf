@@ -5,9 +5,16 @@
   <div class="row mt-3">
     <div class="mx-auto">
       <%= form_with model: @seat, url: restaurant_seat_path(@seat), local:true do |f| %>
+      <% if @seat.errors.any? %>
+        <% @seat.errors.full_messages.each do |message| %>
+          <div class="text-danger">
+            ※<%= message %>
+          </div>
+        <% end %>
+      <% end %>
         <form>
           <div class="form-growp mt-3">
-            <label for="seat_type">席タイプ</label>
+            <label for="seat_type">席タイプ</label><span class="text-danger">(必須)</span>
             <%= f.text_field :seat_type, autofocus: true, class: "form-control" %>
           </div>
           <div class="form-growp mt-5">
@@ -21,7 +28,7 @@
             <%= f.text_area :introduction, autofocus: true, class: "form-control" %>
           </div>
           <div class="form-growp mt-5">
-            <label for="people">人数</label>
+            <label for="people">人数</label><span class="text-danger">(必須)</span>
             <%= f.text_field :people, autofocus: true, class: "form-control" %>
           </div>
           <div class="form-growp mt-5">

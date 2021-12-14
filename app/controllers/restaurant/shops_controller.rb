@@ -13,8 +13,11 @@ class Restaurant::ShopsController < ApplicationController
 
   def update
     @shop = current_shop
-    @shop.update(shop_params)
-    redirect_to restaurant_shops_path
+    if @shop.update(shop_params)
+      redirect_to restaurant_shops_path
+    else 
+      render :edit
+    end
   end
 
   def unsubscribe

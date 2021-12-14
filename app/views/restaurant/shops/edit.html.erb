@@ -6,14 +6,21 @@
   <div class="row">
     <div class="mx-auto">
       <%= form_with model:@shop, url: restaurant_shops_path, local:true do |f| %>
+      <% if @shop.errors.any? %>
+        <% @shop.errors.full_messages.each do |message| %>
+          <div class="text-danger">
+            ※<%= message %>
+          </div>
+        <% end %>
+      <% end %>
       <form>
         <div class="form-group mt-3">
-          <label for="shop_name">店名</label>
+          <label for="shop_name">店名</label><span class="text-danger">(必須)</span>
           <%= f.text_field :shop_name, autofocus: true, class: "form-control" %>
         </div>
 
       <div class="form-group mt-4">
-        <label for="shop_name_kana">店名フリガナ</label>
+        <label for="shop_name_kana">店名フリガナ</label><span class="text-danger">(必須)</span>
         <%= f.text_field :shop_name_kana, autofocus: true, class: "form-control" %>
       </div>
 
@@ -25,7 +32,7 @@
       </div>
 
       <div class="form-growp mt-4">
-        <label for="email">メールアドレス</label>
+        <label for="email">メールアドレス</label><span class="text-danger">(必須)</span>
         <%= f.email_field :email, autofocus: true, class: "form-control" %>
       </div>
 

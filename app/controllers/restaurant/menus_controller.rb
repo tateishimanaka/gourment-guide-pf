@@ -30,8 +30,11 @@ class Restaurant::MenusController < ApplicationController
 
   def update
     @menu = Menu.find(params[:id])
-    @menu.update(menu_params)
-    redirect_to restaurant_menu_path(@menu)
+    if @menu.update(menu_params)
+      redirect_to restaurant_menu_path(@menu)
+    else
+      render :edit
+    end
   end
 
   private

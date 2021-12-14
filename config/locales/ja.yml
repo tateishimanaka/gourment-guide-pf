@@ -244,3 +244,7 @@ ja:
         people: '人数'
       image:
         image: "イメージ画像"
+      shop:
+        shop_name: '店名'
+        shop_name_kana: 'フリガナ'
+        email: 'メールアドレス'
