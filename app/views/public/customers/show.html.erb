@@ -24,6 +24,13 @@
             <td><%= @customer.email %></td>
           </tr>
           <tr>
+            <th scope="row">住所</th>
+            <td>
+              〒<%= @customer.postal_code %><br>
+              <%= @customer.address %>
+            </td>
+          </tr>
+          <tr>
             <th scope="row"></th>
             <td>
               <%= link_to "保存したお店", favorite_customers_path, class: "btn btn-outline-secondary" %>
