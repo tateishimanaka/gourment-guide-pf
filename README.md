@@ -22,8 +22,10 @@
 行きたいお店の情報を調べるとき（一般ユーザー側）、正確な情報を載せたいとき（お店側）
 
 ## 設計書
-
-<file:///C:/Users/MT/Downloads/Untitled%20Diagram.drawio%20(5).pdf>
+テーブル定義書
+<https://docs.google.com/spreadsheets/d/1arnyJME9S9tlSY2F6UQ1_NlegeQZNhmJHmQ3_wJwWXQ/edit#gid=1382960076>
+詳細設計
+<https://docs.google.com/spreadsheets/d/16AgHZ6rBsqcHYV1KbYjU_WrSWopXPUG7ZbO7Ca7d6CM/edit#gid=0>
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1FUxpsCZv5437DhdY1EtOQCDtLatCRWs5Zy0gcHyhu_s/edit#gid=0>
@@ -34,3 +36,6 @@
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
+-
+## 使用素材
+- O-DAN<https://o-dan.net/ja/>
