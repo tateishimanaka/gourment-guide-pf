@@ -1,4 +1,4 @@
-# グルメガイド
+# gourment-guide
 
 ## サイト概要
 どのようなメニューがあるか、最寄り駅どこで所要時間はどのくらいで到着するか、定休日はいつか、営業時間は何時から何時までか、予約はできるのか等、
@@ -22,6 +22,8 @@
 行きたいお店の情報を調べるとき（一般ユーザー側）、正確な情報を載せたいとき（お店側）
 
 ## 設計書
+
+(file:///C:/Users/MT/Downloads/Untitled%20Diagram.drawio%20(5).pdf)
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1FUxpsCZv5437DhdY1EtOQCDtLatCRWs5Zy0gcHyhu_s/edit#gid=0>
