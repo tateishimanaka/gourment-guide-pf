@@ -23,7 +23,7 @@
 
 ## 設計書
 
-(file:///C:/Users/MT/Downloads/Untitled%20Diagram.drawio%20(5).pdf)
+<file:///C:/Users/MT/Downloads/Untitled%20Diagram.drawio%20(5).pdf>
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1FUxpsCZv5437DhdY1EtOQCDtLatCRWs5Zy0gcHyhu_s/edit#gid=0>
