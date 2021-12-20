@@ -23,16 +23,21 @@
 
 ## 使い方
 店側、一般ユーザーともに会員登録をしていなくても、お店の情報等を閲覧することができます。
+
 **店側**
+
 会員登録をする際に基本情報を登録します。登録後、メニューや席タイプの登録、画像の投稿ができるようになります。
 
 **一般ユーザー**
+
 会員登録をすることで、お店へのコメント投稿やお気に入り登録をすることができます。また、お気に入り登録をしたお店は、マイページから確認することができます。
 
 ## 設計書
 テーブル定義書
 <https://docs.google.com/spreadsheets/d/1arnyJME9S9tlSY2F6UQ1_NlegeQZNhmJHmQ3_wJwWXQ/edit#gid=1382960076>
+
 詳細設計
+
 <https://docs.google.com/spreadsheets/d/16AgHZ6rBsqcHYV1KbYjU_WrSWopXPUG7ZbO7Ca7d6CM/edit#gid=0>
 
 ## チャレンジ要素一覧
