@@ -33,7 +33,6 @@
 <https://docs.google.com/spreadsheets/d/1arnyJME9S9tlSY2F6UQ1_NlegeQZNhmJHmQ3_wJwWXQ/edit#gid=1382960076>
 
 詳細設計
-
 <https://docs.google.com/spreadsheets/d/16AgHZ6rBsqcHYV1KbYjU_WrSWopXPUG7ZbO7Ca7d6CM/edit#gid=0>
 
 ## チャレンジ要素一覧
