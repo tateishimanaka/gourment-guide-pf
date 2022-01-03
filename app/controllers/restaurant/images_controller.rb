@@ -26,6 +26,9 @@ class Restaurant::ImagesController < ApplicationController
 
   def edit
     @image = Image.find(params[:id])
+    if @image.shop != current_shop
+      redirect_to new_shop_session_path
+    end
   end
 
   def update

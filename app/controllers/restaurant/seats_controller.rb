@@ -22,6 +22,9 @@ class Restaurant::SeatsController < ApplicationController
 
   def edit
     @seat = Seat.find(params[:id])
+    if @seat.shop != current_shop
+      redirect_to new_shop_session_path
+    end
   end
 
   def update

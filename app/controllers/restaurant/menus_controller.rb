@@ -26,6 +26,9 @@ class Restaurant::MenusController < ApplicationController
 
   def edit
     @menu = Menu.find(params[:id])
+    if @menu.shop != current_shop
+      redirect_to new_shop_session_path
+    end
   end
 
   def update
