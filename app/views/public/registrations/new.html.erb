@@ -9,9 +9,8 @@
     <div class="col-md-11 offset-md-1">
       <%= form_with model: @customer, url: customer_registration_path, local:true do |f| %>
       <%= render "public/shared/error_messages", resource: resource %>
-      <form>
         <div class="form-growp row">
-        <label for="name" class="col-md-3 col-form-label">名前</label>
+        <label for="name" class="col-md-3 col-form-label">名前<span class="text-danger">(必須)</span></label>
         (姓)
         <div class="col-md-3 ml-3">
           <%= f.text_field :last_name, autofocus: true, placeholder: "(例)佐藤", class: "form-control" %>
@@ -22,7 +21,7 @@
         </div>
       </div>
       <div class="form-growp row mt-3">
-        <label for="name_kana" class="col-md-3 col-form-label">フリガナ</label>
+        <label for="name_kana" class="col-md-3 col-form-label">フリガナ<span class="text-danger">(必須)</span></label>
         (セイ)<div class="col-md-3">
           <%= f.text_field :last_name_kana, autofocus: true, placeholder: "(例)サトウ", class: "form-control" %>
         </div>
@@ -31,31 +30,31 @@
         </div>
       </div>
       <div class="form-growp row mt-4">
-        <label for="postal_code" class="col-md-3 col-form-label mr-4">郵便番号(ハイフンなし)</label>
+        <label for="postal_code" class="col-md-3 col-form-label mr-4">郵便番号(ハイフンなし)<span class="text-danger">(必須)</span></label>
         <div class="col-md-3 ml-3">
           <%= f.text_field :postal_code, autofocus: true, placeholder: "(例)1234567", class: "form-control" %>
         </div>
       </div>
       <div class="form-growp row mt-4">
-        <label for="address" class="col-md-3 col-form-label mr-4">住所</label>
+        <label for="address" class="col-md-3 col-form-label mr-4">住所<span class="text-danger">(必須)</span></label>
         <div class="col-md-5 ml-3">
           <%= f.text_field :address, autofocus: true, placeholder: "(例)東京都渋谷区道玄坂1－1", class: "form-control" %>
         </div>
       </div>
       <div class="form-growp row mt-3">
-        <label for="telephone_number" class="col-md-3 col-form-label mr-4">電話番号(ハイフンなし)</label>
+        <label for="telephone_number" class="col-md-3 col-form-label mr-4">電話番号(ハイフンなし)<span class="text-danger">(必須)</span></label>
         <div class="col-md-3 ml-3">
           <%= f.text_field :telephone_number, autofocus: true, placeholder: "(例)09012345678", class: "form-control" %>
         </div>
       </div>
       <div class="form-growp row mt-4">
-        <label for="email" class="col-md-3 col-form-label mr-4">メールアドレス</label>
+        <label for="email" class="col-md-3 col-form-label mr-4">メールアドレス<span class="text-danger">(必須)</span></label>
         <div class="col-md-3 ml-3">
           <%= f.email_field :email, autofocus: true, placeholder: "(例)gourment@email.com", class: "form-control" %>
         </div>
       </div>
       <div class="form-growp row mt-4">
-        <label for="passward" class="col-md-3 col-form-label mr-4 mt-3">パスワード(6文字以上)</label>
+        <label for="passward" class="col-md-3 col-form-label mr-4 mt-3">パスワード(6文字以上)<span class="text-danger">(必須)</span></label>
         <div class="col-md-3 ml-3">
           <% if @minimum_password_length %>
             <!--<em>(<%= @minimum_password_length %> characters minimum)</em>-->
@@ -64,7 +63,7 @@
         </div>
       </div>
       <div class="form-growp row mt-4">
-        <label for="passward" class="col-md-3 col-form-label mr-4">パスワード(確認用)</label>
+        <label for="passward" class="col-md-3 col-form-label mr-4">パスワード(確認用)<span class="text-danger">(必須)</span></label>
         <div class="col-md-3 ml-3">
           <%= f.password_field :password_confirmation, autocomplete: "new-password", autofocus: true, class: "form-control" %>
         </div>
@@ -81,7 +80,6 @@
           <%= link_to "戻る", about_path %>
         </div>
       </div>
-    </form>
     <% end %>
     </div>
   </div>

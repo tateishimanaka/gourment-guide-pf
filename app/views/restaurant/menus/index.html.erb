@@ -19,7 +19,7 @@
         <div class="col-auto">
           <%= link_to restaurant_menu_path(menu.id), class: "text-dark nav-link" do %>
           <div class="image">
-              <%= attachment_image_tag menu, :image, format: 'jpeg', size: "200x150", class: "rounded" %>
+            <%= attachment_image_tag menu, :image, :fill, 200, 190, format: 'jpeg', class: "rounded" %>
           </div>
           <h6 class="mt-1">
             <%= menu.name %>
