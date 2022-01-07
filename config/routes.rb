@@ -36,7 +36,7 @@ Rails.application.routes.draw do
       resource :comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
       resources :menus, only: [:index, :show]
-      resources :seats, only: [:index]
+      resources :seats, only: [:index, :show]
       resources :images, only: [:index, :show]
     end
   end
