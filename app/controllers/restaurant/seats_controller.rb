@@ -19,6 +19,10 @@ class Restaurant::SeatsController < ApplicationController
   def index
     @seats = current_shop.seats
   end
+  
+  def show
+    @seat = Seat.find(params[:id])
+  end
 
   def edit
     @seat = Seat.find(params[:id])

@@ -47,7 +47,7 @@ Rails.application.routes.draw do
     get "shop/unsubscribe" => "shops#unsubscribe"
     patch "/shop/withdraw" => "shops#withdraw"
     resources :menus, only: [:create, :new, :index, :show, :edit, :update]
-    resources :seats, only: [:create, :new, :index, :edit, :update]
+    resources :seats, only: [:create, :new, :index, :edit, :update, :show]
     resources :images, only: [:new, :create, :index, :show, :edit, :update, :destroy]
   end
 
