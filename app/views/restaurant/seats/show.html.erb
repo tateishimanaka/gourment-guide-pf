@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row">
+    <h4 class="ml-4 mt-4">
+      <%= @seat.seat_type %>
+    </h4>
+  </div>
+  <div class="row">
+    <P class="mt-4 ml-4">
+      <%= link_to "席タイプ一覧", restaurant_seats_path %>
+    </P>
+  </div>
+  <div class="row">
+    <div class="col-md-5 mt-5">
+      <%= attachment_image_tag @seat, :image, :fill, 500, 500, format: 'jpeg', class: "rounded" %>
+    </div>
+    <div class="col-md-5 offset-md-1 mt-5">
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <th scope="row">席タイプ</th>
+            <td><%= @seat.seat_type %></td>
+          </tr>
+          <tr>
+            <th scope="row">説明</th>
+            <td>
+              <%= @seat.introduction %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">人数</th>
+            <td>
+              <%= @seat.people %>人
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">禁煙・喫煙</th>
+            <td>
+              <% if @seat.smoking == true %>
+                喫煙可
+              <% else %>
+                禁煙
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">予約</th>
+            <td>
+              <%= @seat.reserve %>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">利用状況</th>
+            <td>
+              <% if @seat.is_active == true %>
+                使用中
+              <% else %>
+                使用停止中
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= link_to "席タイプを編集する", edit_restaurant_seat_path(@seat.id) %>
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
