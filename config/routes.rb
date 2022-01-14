@@ -27,11 +27,11 @@ Rails.application.routes.draw do
     get "/about" => "homes#about"
     resource :customers, only: [:show, :edit, :update] do
       collection do
+        get :unsubscribe
+        patch :withdraw
         get :favorite
       end
     end
-    get "/customer/unsubscribe" => "customers#unsubscribe"
-    patch "/customer/withdraw" => "customers#withdraw"
     resources :shops, only: [:show, :index] do
       resource :comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
@@ -43,9 +43,12 @@ Rails.application.routes.draw do
 
   namespace :restaurant do
     get "/about" => "homes#about", as: "about"
-    resource :shops, only: [:show, :edit, :update]
-    get "shop/unsubscribe" => "shops#unsubscribe"
-    patch "/shop/withdraw" => "shops#withdraw"
+    resource :shops, only: [:show, :edit, :update] do
+      collection do
+        get :unsubscribe
+        patch :withdraw
+      end
+    end
     resources :menus, only: [:create, :new, :index, :show, :edit, :update]
     resources :seats, only: [:create, :new, :index, :edit, :update, :show]
     resources :images, only: [:new, :create, :index, :show, :edit, :update, :destroy]
