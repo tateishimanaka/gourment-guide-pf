@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :shop do
     email { Faker::Internet.email }
-    passward { 'passward' }
+    password { 'password' }
     password_confirmation { 'password' }
     shop_name { Faker::Lorem.characters(number: 10) }
     shop_name_kana { Faker::Lorem.characters(number: 20) }
