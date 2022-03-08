@@ -23,7 +23,7 @@ RSpec.describe "Seatモデルに関するテスト" do
       end
     end
   end
-  
+
   describe "アソシエーションのテスト" do
     context "Shopモデルとの関係" do
       it "N:1となっている" do
