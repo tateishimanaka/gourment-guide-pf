@@ -14,5 +14,12 @@ RSpec.describe 'Customerモデルのテスト' do
         is_expected.to eq false
       end
     end
+    
+    context 'first_nameカラム' do
+      it '空欄でないこと' do
+        customer.first_name = ''
+        is_expected.to eq false
+      end
+    end
   end
 end
