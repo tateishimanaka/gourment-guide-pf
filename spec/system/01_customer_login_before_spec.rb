@@ -4,6 +4,8 @@ require 'rails_helper'
 
 describe '[step1]customerログイン前のテスト' do
   describe 'トップ画面のテスト' do
+    let!(:shop) { create(:shop) }
+
     before do
       visit root_path
     end
@@ -45,6 +47,12 @@ describe '[step1]customerログイン前のテスト' do
       it '「shop List」のリンクの内容が正しい' do
         shop_list_link = find_all('a')[3].native.inner_text
         expect(page).to have_link shop_list_link, href: shops_path
+      end
+    end
+
+    context '一覧の表示' do
+      it 'お店の情報のオピニオンは表示されているか' do
+        expect(page).to have_content shop.shop_name
       end
     end
   end
