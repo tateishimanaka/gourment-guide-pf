@@ -76,4 +76,30 @@ describe '[step1]customerログイン前のテスト' do
       end
     end
   end
+
+  describe '飲食店側アバウト画面のテスト' do
+    before do
+      visit restaurant_about_path
+    end
+
+    context '表示内容の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/restaurant/about'
+      end
+
+      it '「gourment guide Shop」と表示されているか' do
+        expect(page).to have_content 'gourment guide Shop'
+      end
+
+      it '「ログイン」のリンクが表示される' do
+        shop_login_link = find_all('a')[4].native.inner_text
+        expect(shop_login_link).to match "ログイン"
+      end
+
+      it '「新規会員登録」のリンクが表示される' do
+        shop_registration_link = find_all('a')[5].native.inner_text
+        expect(shop_registration_link).to match "新規会員登録"
+      end
+    end
+  end
 end
