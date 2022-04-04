@@ -50,8 +50,28 @@ describe '[step1]customerログイン前のテスト' do
       end
     end
 
+    context 'リンクの遷移先の確認' do
+      it '「お店の情報を公開」を押すと、飲食店側のアバウト画面に遷移する' do
+        shop_link = find_all('a')[1]
+        shop_link.click
+        expect(page).to have_current_path restaurant_about_path
+      end
+
+      it '「お店を探す」を押すと、一般会員側のアバウト画面に遷移する' do
+        customer_link = find_all('a')[2]
+        customer_link.click
+        expect(page).to have_current_path about_path
+      end
+
+      it '「shop Link」を押すと、飲食店一覧の画面に遷移する' do
+        shop_list_link = find_all('a')[3]
+        shop_list_link.click
+        expect(page).to have_current_path shops_path
+      end
+    end
+
     context '一覧の表示' do
-      it 'お店の情報のオピニオンは表示されているか' do
+      it '店名は表示されているか' do
         expect(page).to have_content shop.shop_name
       end
     end
