@@ -114,4 +114,31 @@ describe '[step1]customerログイン前のテスト' do
       end
     end
   end
+
+  describe '飲食店側ログイン画面のテスト' do
+    let(:shop) { create(:shop) }
+    before do
+      visit new_shop_session_path
+    end
+
+    context '表示内容の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/shop/sign_in'
+      end
+
+      it '「gourment-guide-shopログイン」と表示されている' do
+        expect(page).to have_content 'gourment-guide-shopログイン'
+      end
+
+      it '「こちら」のリンクが表示される' do
+        shop_registration_link = find_all('a')[4].native.inner_text
+        expect(shop_registration_link).to match "こちら"
+      end
+
+      # it '「こちら」のリンクの内容が、飲食店側の新規登録のリンクである' do
+      #   shop_registration_link = find_all('a')[4]
+      #   expect(shop_registration_link).to match '/shop/sign_up'
+      # end
+    end
+  end
 end
