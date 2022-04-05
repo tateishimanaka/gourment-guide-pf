@@ -96,9 +96,21 @@ describe '[step1]customerログイン前のテスト' do
         expect(shop_login_link).to match "ログイン"
       end
 
+      it '「ログイン」のリンクの内容が正しい' do
+        shop_login_link = find_all('a')[4]
+        shop_login_link.click
+        expect(page).to have_current_path new_shop_session_path
+      end
+
       it '「新規会員登録」のリンクが表示される' do
         shop_registration_link = find_all('a')[5].native.inner_text
         expect(shop_registration_link).to match "新規会員登録"
+      end
+
+      it '「新規会員登録」のリンクの内容が正しい' do
+        shop_registration_link = find_all('a')[5]
+        shop_registration_link.click
+        expect(page).to have_current_path new_shop_registration_path
       end
     end
   end
