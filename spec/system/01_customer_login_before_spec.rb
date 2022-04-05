@@ -139,6 +139,20 @@ describe '[step1]customerログイン前のテスト' do
       #   shop_registration_link = find_all('a')[4]
       #   expect(shop_registration_link).to match '/shop/sign_up'
       # end
+
+      it '「こちら」のリンクの内容が正しい' do
+        shop_registration_link = find_all('a')[4]
+        shop_registration_link.click
+        expect(page).to have_current_path new_shop_registration_path
+      end
+
+      it 'emailフォームが表示される' do
+        expect(page).to have_field 'shop[email]'
+      end
+
+      it 'passwordフォームが表示される' do
+        expect(page).to have_field 'shop[password]'
+      end
     end
   end
 end
