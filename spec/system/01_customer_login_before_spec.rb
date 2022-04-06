@@ -162,4 +162,21 @@ describe '[step1]customerログイン前のテスト' do
       end
     end
   end
+
+  describe '飲食店側ヘッダーのテスト: ログインしている場合' do
+    let(:shop) { create(:shop) }
+
+    before do
+      visit new_shop_session_path
+      fill_in 'shop[email]', with: shop.email
+      fill_in 'shop[password]', with: shop.password
+      click_button 'ログイン'
+    end
+
+    context 'ヘッダーの表示を確認' do
+      it 'タイトルが表示される' do
+        expect(page).to have_content 'Gourment Guide'
+      end
+    end
+  end
 end
