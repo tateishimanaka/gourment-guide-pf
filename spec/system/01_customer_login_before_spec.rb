@@ -191,4 +191,26 @@ describe '[step1]customerログイン前のテスト' do
       end
     end
   end
+
+  describe 'ユーザーログアウトのテスト' do
+    let(:shop) { create(:shop) }
+
+    before do
+      visit new_shop_session_path
+      fill_in 'shop[email]', with: shop.email
+      fill_in 'shop[password]', with: shop.password
+      click_button 'ログイン'
+      logout_link = find_all('a')[1].native.inner_text
+      click_link logout_link
+    end
+
+    context 'ログアウト機能のテスト' do
+      it '正しくログアウトできている: ログアウト後のリダイレクト先においてトップ画面のリンクが存在する' do
+        expect(page).to have_link '', href: '/'
+      end
+      it 'ログアウト後のリダイレクト先が、飲食店側のアバウト画面になっている' do
+        expect(current_path).to eq '/restaurant/about'
+      end
+    end
+  end
 end
