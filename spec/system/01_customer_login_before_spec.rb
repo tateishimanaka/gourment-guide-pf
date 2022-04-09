@@ -177,6 +177,18 @@ describe '[step1]customerログイン前のテスト' do
       it 'タイトルが表示される' do
         expect(page).to have_content 'Gourment Guide'
       end
+      it 'Logoutリンクが表示される: 左上から１番目のリンクが「Logout」である' do
+        logout_link = find_all('a')[1].native.inner_text
+        expect(logout_link).to match 'Logout'
+      end
+      it 'Shop Listリンクが表示される' do
+        shop_list_link = find_all('a')[2].native.inner_text
+        expect(shop_list_link).to match 'Shop List'
+      end
+      it 'My Pageリンクが表示される' do
+        mypage_link = find_all('a')[3].native.inner_text
+        expect(mypage_link).to match 'My Page'
+      end
     end
   end
 end
