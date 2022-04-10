@@ -172,6 +172,32 @@ describe '[step1]customerログイン前のテスト' do
       end
     end
 
+    context '新規登録成功のテスト' do
+      # before do
+      #   fill_in 'shop[shop_name]', with: Faker::Lorem.characters(number: 10)
+      #   fill_in 'shop[shop_name_kana]', with: Faker::Lorem.characters(number: 20)
+      #   fill_in 'shop[email]', with: Faker::Internet.email
+      #   fill_in 'shop[password]', with: 'password'
+      #   fill_in 'shop[password_confirmation]', with: 'password'
+      # end
+
+      # it '正しく登録される' do
+      #   expect { click_button '登録する' }.to change(Shop.all, :count).by(1)
+      # end
+      it '有効な場合は登録されるか' do
+        expect(FactoryBot.build(:shop)).to be_valid
+      end
+      it '登録できるか' do
+        fill_in 'shop[shop_name]', with: Faker::Lorem.characters(number: 10)
+        fill_in 'shop[shop_name_kana]', with: Faker::Lorem.characters(number: 20)
+        fill_in 'shop[email]', with: Faker::Internet.email
+        fill_in 'shop[password]', with: 'password'
+        fill_in 'shop[password_confirmation]', with: 'password'
+        click_button '登録する'
+        expect(current_path).to eq '/restaurant/shops'
+      end
+    end
+
   end
 
   describe '飲食店側ログイン画面のテスト' do
