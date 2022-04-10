@@ -101,6 +101,79 @@ describe '[step1]customerログイン前のテスト' do
     end
   end
 
+  describe '飲食店側新規登録画面のテスト' do
+    before do
+      visit new_shop_registration_path
+    end
+
+    context '表示内容の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/shop/sign_up'
+      end
+      it '「gourment-guide-shop新規会員登録」と表示される' do
+        expect(page).to have_content 'gourment-guide-shop新規会員登録'
+      end
+      it 'shop_nameフォームが表示される' do
+        expect(page).to have_field 'shop[shop_name]'
+      end
+      it 'shop_name_kanaフォームが表示される' do
+        expect(page).to have_field 'shop[shop_name_kana]'
+      end
+       it 'imageフォームが表示される' do
+        expect(page).to have_field 'shop[image]'
+      end
+      it 'emailフォームが表示される' do
+        expect(page).to have_field 'shop[email]'
+      end
+      it 'telephone_numberフォームが表示される' do
+        expect(page).to have_field 'shop[telephone_number]'
+      end
+      it 'postal_codeフォームが表示される' do
+        expect(page).to have_field 'shop[postal_code]'
+      end
+      it 'addressフォームが表示される' do
+        expect(page).to have_field 'shop[address]'
+      end
+      it 'accessフォームが表示される' do
+        expect(page).to have_field 'shop[access]'
+      end
+      it 'opening_hoursフォームが表示される' do
+        expect(page).to have_field 'shop[opening_hours]'
+      end
+      it 'holidayフォームが表示される' do
+        expect(page).to have_field 'shop[holiday]'
+      end
+      it 'genreフォームが表示される' do
+        expect(page).to have_field 'shop[genre]'
+      end
+      it 'payment_methodフォームが表示される' do
+        expect(page).to have_field 'shop[payment_method]'
+      end
+      it 'smokingフォームが表示される' do
+        expect(page).to have_field 'shop[smoking]'
+      end
+      it 'childrenフォームが表示される' do
+        expect(page).to have_field 'shop[children]'
+      end
+      it 'wait_timeフォームが表示される' do
+        expect(page).to have_field 'shop[wait_time]'
+      end
+      it 'introductionフォームが表示される' do
+        expect(page).to have_field 'shop[introduction]'
+      end
+      it 'passwordフォームが表示される' do
+        expect(page).to have_field 'shop[password]'
+      end
+      it 'password_confirmationフォームが表示される' do
+        expect(page).to have_field 'shop[password_confirmation]'
+      end
+      it '「登録する」ボタンが表示される' do
+        expect(page).to have_button '登録する'
+      end
+    end
+
+  end
+
   describe '飲食店側ログイン画面のテスト' do
     let(:shop) { create(:shop) }
     before do
