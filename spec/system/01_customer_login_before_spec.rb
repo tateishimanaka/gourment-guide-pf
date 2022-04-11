@@ -312,4 +312,34 @@ describe '[step1]customerログイン前のテスト' do
       end
     end
   end
+
+  describe '一般会員側のアバウト画面のテスト' do
+    before do
+      visit about_path
+    end
+    context '表示内容の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/about'
+      end
+      it '「gourment guide」と表示される' do
+        expect(page).to have_content 'gourment guide'
+      end
+      it '「ログイン」リンクが表示される' do
+        login_link = find_all('a')[4].native.inner_text
+        expect(login_link).to match 'ログイン'
+      end
+      it 'ログインリンクの内容が正しい' do
+        login_link = find_all('a')[4].native.inner_text
+        expect(page).to have_link login_link, href: new_customer_session_path
+      end
+      it '「新規登録」リンクが表示される' do
+        registration_link = find_all('a')[5].native.inner_text
+        expect(registration_link).to match '新規登録'
+      end
+      it '新規登録リンクの内容が正しい' do
+        registration_link = find_all('a')[5].native.inner_text
+        expect(page).to have_link registration_link, href: new_customer_registration_path
+      end
+    end
+  end
 end
