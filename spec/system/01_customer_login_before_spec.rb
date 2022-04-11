@@ -99,6 +99,14 @@ describe '[step1]customerログイン前のテスト' do
         expect(page).to have_current_path new_shop_registration_path
       end
     end
+
+    context 'リンクの遷移先の確認' do
+      it 'ログインを押すと、飲食店側のログイン画面に遷移する' do
+        login_link = find_all('a')[4]
+        login_link.click
+        expect(current_path).to eq '/shop/sign_in'
+      end
+    end
   end
 
   describe '飲食店側新規登録画面のテスト' do
