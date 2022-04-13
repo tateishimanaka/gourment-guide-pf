@@ -106,6 +106,11 @@ describe '[step1]customerログイン前のテスト' do
         login_link.click
         expect(current_path).to eq '/shop/sign_in'
       end
+      it '新規登録を押すと、飲食店側の新規会員登録が目に遷移する' do
+        registration_link = find_all('a')[5]
+        registration_link.click
+        expect(current_path).to eq '/shop/sign_up'
+      end
     end
   end
 
@@ -333,20 +338,33 @@ describe '[step1]customerログイン前のテスト' do
         expect(page).to have_content 'gourment guide'
       end
       it '「ログイン」リンクが表示される' do
-        login_link = find_all('a')[4].native.inner_text
-        expect(login_link).to match 'ログイン'
+        customer_login_link = find_all('a')[4].native.inner_text
+        expect(customer_login_link).to match 'ログイン'
       end
       it 'ログインリンクの内容が正しい' do
-        login_link = find_all('a')[4].native.inner_text
-        expect(page).to have_link login_link, href: new_customer_session_path
+        customer_login_link = find_all('a')[4].native.inner_text
+        expect(page).to have_link customer_login_link, href: new_customer_session_path
       end
       it '「新規登録」リンクが表示される' do
-        registration_link = find_all('a')[5].native.inner_text
-        expect(registration_link).to match '新規登録'
+        customer_registration_link = find_all('a')[5].native.inner_text
+        expect(customer_registration_link).to match '新規登録'
       end
       it '新規登録リンクの内容が正しい' do
-        registration_link = find_all('a')[5].native.inner_text
-        expect(page).to have_link registration_link, href: new_customer_registration_path
+        customer_registration_link = find_all('a')[5].native.inner_text
+        expect(page).to have_link customer_registration_link, href: new_customer_registration_path
+      end
+    end
+
+    context 'リンクの遷移先の確認' do
+      it 'ログインを押すと、一般会員側のログイン画面に遷移する' do
+        customer_login_link = find_all('a')[4]
+        customer_login_link.click
+        expect(current_path).to eq '/customer/sign_in'
+      end
+      it '新規登録を押すと、一般会員側の新規会員登録画面に遷移する' do
+        customer_registration_link = find_all('a')[5]
+        customer_registration_link.click
+        expect(current_path).to eq '/customer/sign_up'
       end
     end
   end
