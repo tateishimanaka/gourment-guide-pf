@@ -429,6 +429,14 @@ describe '[step1]customerログイン前のテスト' do
         fill_in 'customer[password_confirmation]', with: 'password'
         fill_in 'customer[email]', with: Faker::Internet.email
       end
+
+      it '正しく登録される' do
+        expect { click_button '登録' }.to change(Customer.all, :count).by(1)
+      end
+      it '新規登録後のリダイレクト先がトップページである' do
+        click_button '登録'
+        expect(current_path).to eq '/'
+      end
     end
   end
 end
