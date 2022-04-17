@@ -439,4 +439,31 @@ describe '[step1]customerログイン前のテスト' do
       end
     end
   end
+
+  describe '一般会員ログイン' do
+    let(:customer) { create(:customer) }
+
+    before do
+      visit new_customer_session_path
+    end
+
+    context '表示内容の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/customer/sign_in'
+      end
+
+      it '「一般会員ログイン画面」と表示される' do
+        expect(page).to have_content '一般会員ログイン画面'
+      end
+      it 'emailフォームが表示される' do
+        expect(page).to have_field 'customer[email]'
+      end
+      it 'passwordフォームが表示される' do
+        expect(page).to have_field 'customer[password]'
+      end
+      it '「ログイン」ボタンが表示される' do
+        expect(page).to have_button 'ログイン'
+      end
+    end
+  end
 end
