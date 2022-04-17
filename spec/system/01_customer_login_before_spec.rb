@@ -477,5 +477,17 @@ describe '[step1]customerログイン前のテスト' do
         expect(current_path).to eq '/shops'
       end
     end
+
+    context 'ログイン失敗' do
+      before do
+        fill_in 'customer[email]', with: ''
+        fill_in 'customer[password]', with: ''
+        click_button 'ログイン'
+      end
+
+      it 'ログインに失敗し、ログイン画面にリダイレクトされる' do
+        expect(current_path).to eq '/customer/sign_in'
+      end
+    end
   end
 end
