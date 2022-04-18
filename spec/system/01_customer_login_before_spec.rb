@@ -490,4 +490,25 @@ describe '[step1]customerログイン前のテスト' do
       end
     end
   end
+
+  describe 'ヘッダーのテスト:　ログインしている場合' do
+    let(:customer) { create(:customer) }
+
+    before do
+      visit new_customer_session_path
+      fill_in 'customer[email]', with: customer.email
+      fill_in 'customer[password]', with: customer.password
+      click_button 'ログイン'
+    end
+
+    context 'ヘッダーの表示を確認' do
+      it 'タイトルが表示される' do
+        expect(page).to have_content 'Gourment Guide'
+      end
+      it 'Logoutリンクが表示される' do
+        logout_link = find_all('a')[1].native.inner_text
+        expect(logout_link).to match 'Logout'
+      end
+    end
+  end
 end
