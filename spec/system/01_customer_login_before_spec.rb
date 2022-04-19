@@ -200,15 +200,6 @@ describe '[step1]customerログイン前のテスト' do
       it '有効な場合は登録されるか' do
         expect(FactoryBot.build(:shop)).to be_valid
       end
-      it '登録できるか' do
-        fill_in 'shop[shop_name]', with: Faker::Lorem.characters(number: 10)
-        fill_in 'shop[shop_name_kana]', with: Faker::Lorem.characters(number: 20)
-        fill_in 'shop[email]', with: Faker::Internet.email
-        fill_in 'shop[password]', with: 'password'
-        fill_in 'shop[password_confirmation]', with: 'password'
-        click_button '登録する'
-        expect(current_path).to eq '/restaurant/shops'
-      end
     end
 
   end
@@ -508,6 +499,28 @@ describe '[step1]customerログイン前のテスト' do
       it 'Logoutリンクが表示される' do
         logout_link = find_all('a')[1].native.inner_text
         expect(logout_link).to match 'Logout'
+      end
+    end
+  end
+
+  describe '一般会員ログアウトのテスト' do
+    let(:customer) { create(:customer) }
+
+    before do
+      visit new_customer_session_path
+      fill_in 'customer[email]', with: customer.email
+      fill_in 'customer[password]', with: customer.password
+      click_button 'ログイン'
+      logout_link = find_all('a')[1].native.inner_text
+      click_link logout_link
+    end
+
+    context 'ログアウト機能のテスト' do
+      it '正しくログアウトできているか: ログアウト後のリダイレクト先においてトップ画面のリンクが存在する' do
+        expect(page).to have_link '', href: '/'
+      end
+      it 'ログアウト後のリダイレクト先が、トップ画面になっている' do
+        expect(current_path).to eq '/'
       end
     end
   end
