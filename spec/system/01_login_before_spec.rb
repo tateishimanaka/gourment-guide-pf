@@ -48,6 +48,5 @@ describe '[STEP1]ログイン前のテスト' do
         expect(page).to have_content shop.shop_name
       end
     end
-    
   end
 end
