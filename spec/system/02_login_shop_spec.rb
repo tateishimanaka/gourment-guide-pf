@@ -3,6 +3,52 @@
 require 'rails_helper'
 
 describe '[STEP2]飲食店側ログインのテスト' do
+  describe '飲食店側アバウト画面のテスト' do
+    before do
+      visit restaurant_about_path
+    end
+
+    context '表示内容の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/restaurant/about'
+      end
+      it '「gourment guide Shop」と表示されているか' do
+        expect(page).to have_content 'gourment guide Shop'
+      end
+      it '「ログイン」のリンクが表示される' do
+        shop_login_link = find_all('a')[4].native.inner_text
+        expect(shop_login_link).to match "ログイン"
+      end
+      it '「ログイン」のリンクの内容が正しい' do
+        shop_login_link = find_all('a')[4]
+        shop_login_link.click
+        expect(page).to have_current_path new_shop_session_path
+      end
+      it '「新規会員登録」のリンクが表示される' do
+        shop_registration_link = find_all('a')[5].native.inner_text
+        expect(shop_registration_link).to match "新規会員登録"
+      end
+      it '「新規会員登録」のリンクの内容が正しい' do
+        shop_registration_link = find_all('a')[5]
+        shop_registration_link.click
+        expect(page).to have_current_path new_shop_registration_path
+      end
+    end
+
+    context 'リンクの遷移先の確認' do
+      it 'ログインを押すと、飲食店側のログイン画面に遷移する' do
+        login_link = find_all('a')[4]
+        login_link.click
+        expect(current_path).to eq '/shop/sign_in'
+      end
+      it '新規登録を押すと、飲食店側の新規会員登録が目に遷移する' do
+        registration_link = find_all('a')[5]
+        registration_link.click
+        expect(current_path).to eq '/shop/sign_up'
+      end
+    end
+  end
+
   describe '飲食店側新規登録画面のテスト' do
     before do
       visit new_shop_registration_path
