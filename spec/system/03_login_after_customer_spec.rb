@@ -8,6 +8,7 @@ describe '一般会員ログイン後のテスト' do
   
   before do
     visit new_customer_session_path
+    fill_in 'customer[email]', with: customer.email
     
   end
 end
